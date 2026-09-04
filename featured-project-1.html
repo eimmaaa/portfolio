@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Featured Project One</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <div class="nav-frame-group">
+
+
+        <picture class="nav-frame">
+
+          <source
+            media="(max-width: 1100px)"
+            srcset="image/frame_phone1.png"
+          >
+
+          <img
+            src="image/frame_lap1.png"
+            alt=""
+            draggable="false"
+          >
+
+        </picture>
+
+
+
+        <!-- GREEN NAV AREA -->
+
+        <div class="nav-green-zone">
+
+          <a
+            href="index.html"
+            class="site-logo"
+            aria-label="Home"
+          >
+
+            <img
+              src="image/logo.png"
+              alt="Eimma's Portfolio"
+            >
+
+          </a>
+
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+
+            <img
+              src="image/menu_phone.png"
+              alt=""
+              draggable="false"
+            >
+
+          </button>
+
+        </div>
+
+
+
+        <!-- DESKTOP NAV -->
+
+        <div class="nav-buttons">
+
+          <a href="about.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>ABOUT</span>
+          </a>
+
+          <a href="works.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>WORKS</span>
+          </a>
+
+          <a href="contact.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>CONTACT</span>
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div class="menu-backdrop"></div>
+
+
+  <aside
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Close navigation menu"
+    >
+      ×
+    </button>
+
+
+    <nav class="mobile-menu-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="works.html">
+        Works
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       WORK DETAIL PAGE
+  ====================================================== -->
+
+  <main class="work-detail-scene">
+
+
+    <div class="work-detail-layout">
+
+
+      <!-- =================================================
+           LEFT SHOWCASE
+      ================================================== -->
+
+      <section class="work-showcase-panel">
+
+
+        <!-- FRAME ASSET -->
+
+        <img
+          src="image/work_showcase.png"
+          alt=""
+          class="work-showcase-frame"
+          draggable="false"
+        >
+
+
+
+        <!-- =================================================
+             MEDIA WINDOW
+
+             Add as many .work-media-item elements
+             as you need.
+
+             The first one is shown initially.
+        ================================================== -->
+
+        <div class="work-screen-window">
+
+
+          <!-- VERSION 01 -->
+
+           <iframe
+            class="work-media-item work-media-video"
+            src="https://www.youtube.com/embed/hpLqgRwklKA?si=AEvODdlE7sXci4Tt"
+            title="Featured Project 1 Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =================================================
+           VERSION CONTROLS
+      ================================================== -->
+
+      <div class="work-version-controls">
+
+
+        <button
+          class="work-version-button work-version-up"
+          type="button"
+          aria-label="Previous version"
+        >
+
+          <img
+            src="image/button_up.png"
+            alt=""
+            draggable="false"
+          >
+
+        </button>
+
+
+
+        <button
+          class="work-version-button work-version-down"
+          type="button"
+          aria-label="Next version"
+        >
+
+          <img
+            src="image/button_down.png"
+            alt=""
+            draggable="false"
+          >
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           RIGHT INFORMATION PANEL
+      ================================================== -->
+
+      <section class="work-info-panel">
+
+
+        <!-- FRAME -->
+
+        <img
+          src="image/details_description.png"
+          alt=""
+          class="work-info-frame"
+          draggable="false"
+        >
+
+
+
+        <!-- =================================================
+             SEE OTHER WORKS
+
+             The arrow is already drawn in the PNG.
+             The text is added beside it.
+        ================================================== -->
+
+        <a
+          href="featured-works.html"
+          class="work-detail-back"
+          aria-label="See other Featured Works"
+        >
+          <span>See other works</span>
+        </a>
+
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <div class="work-detail-title">
+
+          <h1>
+            DMS2 - SoSau Media
+          </h1>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESCRIPTION
+
+             This area scrolls by itself if the text
+             becomes too long.
+        ================================================== -->
+
+        <div class="work-detail-description">
+
+          <p>
+            SoSau Media is a project featuring the combination of 3D,2D with UI/UX experiences. The projects featuring the exploration in prototyping, animation via Figma software to create a website for an art gallery event.
+          </p>
+
+          <p>
+            My main work in this project was to create the UI/UX design for some activities in the event such as the photobooth and timeline. I also took part in arranging the website layout.
+          </p>
+
+
+        </div>
+
+
+      </section>
+
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <img
+      src="image/bottomframe.png"
+      alt=""
+      class="bottom-frame-img"
+      draggable="false"
+    >
+
+
+    <div class="bottom-marquee">
+
+      <div class="marquee-track">
+
+
+        <div class="marquee-content">
+
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+
+        </div>
+
+
+        <div
+          class="marquee-content"
+          aria-hidden="true"
+        >
+
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+          <span>Featured Works</span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

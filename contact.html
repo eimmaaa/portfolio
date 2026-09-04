@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contact Me</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <div class="nav-frame-group">
+
+
+        <!-- NAV FRAME -->
+
+        <picture class="nav-frame">
+
+          <source
+            media="(max-width: 1100px)"
+            srcset="image/frame_phone1.png"
+          >
+
+          <img
+            src="image/frame_lap1.png"
+            alt=""
+            draggable="false"
+          >
+
+        </picture>
+
+
+
+        <!-- =================================================
+             GREEN NAV ZONE
+        ================================================== -->
+
+        <div class="nav-green-zone">
+
+
+          <!-- LOGO = HOME -->
+
+          <a
+            href="index.html"
+            class="site-logo"
+            aria-label="Home"
+          >
+
+            <img
+              src="image/logo.png"
+              alt="Eimma's Portfolio"
+            >
+
+          </a>
+
+
+
+          <!-- TABLET / PHONE MENU -->
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+
+            <img
+              src="image/menu_phone.png"
+              alt=""
+              draggable="false"
+            >
+
+          </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESKTOP NAVIGATION BUTTONS
+        ================================================== -->
+
+        <div class="nav-buttons">
+
+
+          <a
+            href="about.html"
+            class="nav-button"
+          >
+
+            <img
+              src="image/button.png"
+              alt=""
+            >
+
+            <span>
+              ABOUT
+            </span>
+
+          </a>
+
+
+
+          <a
+            href="works.html"
+            class="nav-button"
+          >
+
+            <img
+              src="image/button.png"
+              alt=""
+            >
+
+            <span>
+              WORKS
+            </span>
+
+          </a>
+
+
+
+          <a
+            href="contact.html"
+            class="nav-button"
+          >
+
+            <img
+              src="image/button.png"
+              alt=""
+            >
+
+            <span>
+              CONTACT
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       TABLET / PHONE MENU
+  ====================================================== -->
+
+  <div class="menu-backdrop"></div>
+
+
+  <aside
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Close navigation menu"
+    >
+      ×
+    </button>
+
+
+    <nav class="mobile-menu-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="works.html">
+        Works
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       CONTACT PAGE
+  ====================================================== -->
+
+  <main class="contact-scene">
+
+
+    <!-- =================================================
+         LEFT SIDE — ROTATING CD
+    ================================================== -->
+
+    <section class="contact-disc-area">
+
+      <img
+        src="image/contact.png"
+        alt="Contact Me"
+        class="contact-disc"
+        draggable="false"
+      >
+
+    </section>
+
+
+
+    <!-- =================================================
+         RIGHT SIDE — CONTACT BUTTONS
+    ================================================== -->
+
+    <section class="contact-links">
+
+
+      <!-- =================================================
+           PHONE
+
+           CHANGE:
+           +84000000000
+
+           TO YOUR REAL PHONE NUMBER.
+      ================================================== -->
+
+      <a
+        href="tel:+84888070505"
+        class="contact-link contact-phone"
+        aria-label="Call me"
+      >
+
+        <img
+          src="image/phone_assets.png"
+          alt=""
+          draggable="false"
+        >
+
+        <span class="contact-link-text">
+          +84 888070505
+        </span>
+
+      </a>
+
+
+
+      <!-- =================================================
+           EMAIL
+
+           CHANGE:
+           yourname@email.com
+
+           TO YOUR REAL EMAIL.
+      ================================================== -->
+
+      <a
+        href="mailto:thuyngocngotran@gmail.com"
+        class="contact-link contact-email"
+        aria-label="Send me an email"
+      >
+
+        <img
+          src="image/mail_assets.png"
+          alt=""
+          draggable="false"
+        >
+
+        <span class="contact-link-text">
+          thuyngocngotran@gmail.com
+        </span>
+
+      </a>
+
+
+
+      <!-- =================================================
+           INSTAGRAM
+
+           CHANGE:
+           YOURUSERNAME
+
+           IN BOTH THE LINK + TEXT BELOW.
+      ================================================== -->
+
+      <a
+        href="https://www.instagram.com/ntngoc._/"
+        class="contact-link contact-instagram"
+        aria-label="Visit my Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <img
+          src="image/ins_asset.png"
+          alt=""
+          draggable="false"
+        >
+
+        <span class="contact-link-text">
+          @ntngoc._
+        </span>
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       BOTTOM FRAME
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <img
+      src="image/bottomframe.png"
+      alt=""
+      class="bottom-frame-img"
+      draggable="false"
+    >
+
+
+    <div class="bottom-marquee">
+
+      <div class="marquee-track">
+
+
+        <!-- FIRST COPY -->
+
+        <div class="marquee-content">
+
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+
+        </div>
+
+
+
+        <!-- SECOND COPY -->
+
+        <div
+          class="marquee-content"
+          aria-hidden="true"
+        >
+
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+          <span>Contact Me</span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</div>
+
+
+<!-- SHARED JS -->
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

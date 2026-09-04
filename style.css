@@ -1,0 +1,7305 @@
+/* =========================================================
+   CUSTOM FONTS
+========================================================= */
+
+@font-face {
+  font-family: "Floozy";
+  src: url("floozy/Floozy__.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Apple Garamond";
+  src: url("apple_garamond/AppleGaramond.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+
+  font-display: swap;
+}
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+
+body {
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #24c7ef;
+}
+
+
+/* =========================================================
+   PAGE
+
+   IMPORTANT:
+
+   Instead of forcing everything into a fixed 1080px page,
+   the page now has:
+
+   navbar
+   flexible middle content
+   bottom bar
+
+   So different laptop heights can adapt.
+========================================================= */
+
+.page {
+  width: 100%;
+  height: 100svh;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  overflow: hidden;
+
+
+  /* SHARED BLUE BACKGROUND */
+
+  background-image:
+    url("image/bg.png");
+
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+  background-size:
+    100% 100%;
+}
+
+
+/* =========================================================
+   NAVIGATION SIZE CONTROL
+========================================================= */
+
+:root {
+  --nav-height: 10.25vw;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  grid-column: 1;
+  grid-row: 1;
+
+  position: relative;
+
+  width: 100%;
+  height: var(--nav-height);
+
+  z-index: 50;
+
+  pointer-events: none;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  container-type: inline-size;
+}
+
+
+/* =========================================================
+   NAV FRAME GROUP
+========================================================= */
+
+.nav-frame-group {
+  position: absolute;
+
+  width: 100%;
+
+  height: 80%;
+
+  left: 50%;
+
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 1;
+
+  container-type: inline-size;
+}
+
+
+/* =========================================================
+   NAV FRAME
+========================================================= */
+
+.nav-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+.nav-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GREEN NAV ZONE
+
+   DESKTOP:
+   This covers the whole nav frame.
+
+   TABLET / PHONE:
+   This becomes only the green section of
+   frame_phone1.png.
+
+   Logo + menu use this as their coordinate system.
+========================================================= */
+
+.nav-green-zone {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAV BUTTON GROUP
+========================================================= */
+
+.nav-buttons {
+  position: absolute;
+
+  left: 33.854%;
+
+  top: 30%;
+
+  width: 50.365%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  column-gap: 3.62%;
+
+  z-index: 5;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   INDIVIDUAL BUTTON
+========================================================= */
+
+.nav-button {
+  position: relative;
+
+  width: 100%;
+
+  display: grid;
+
+  place-items: center;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+
+.nav-button img,
+.nav-button span {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.nav-button img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+.nav-button span {
+  position: relative;
+
+  z-index: 2;
+
+  color: white;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.5rem,
+      1cqw,
+      1.1rem
+    );
+
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BUTTON INTERACTION
+========================================================= */
+
+.nav-button:hover {
+  transform:
+    translateY(-4px)
+    scale(1.035);
+
+  filter:
+    brightness(1.08);
+}
+
+
+.nav-button:active {
+  transform:
+    scale(0.96);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-logo {
+  position: absolute;
+
+  left: 1.3%;
+
+  top: 23%;
+
+  width: 10.5%;
+
+  z-index: 10;
+
+  pointer-events: auto;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.site-logo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+.site-logo:hover {
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================================
+   PHONE / TABLET MENU BUTTON
+
+   HIDDEN ON DESKTOP
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  position: absolute;
+
+  border: 0;
+
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  line-height: 0;
+
+  z-index: 100;
+
+  pointer-events: auto;
+}
+
+
+.menu-toggle img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu,
+.menu-backdrop {
+  display: none;
+}
+
+
+/* =========================================================
+   MAIN SCENE
+========================================================= */
+
+.about-scene {
+  grid-column: 1;
+  grid-row: 2;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      12,
+      minmax(0, 1fr)
+    );
+}
+
+
+/* =========================================================
+   LINE ASSETS
+========================================================= */
+
+.scene-line {
+  position: absolute;
+
+  display: block;
+
+  object-fit: fill;
+
+  z-index: 12;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   TOP LINE
+========================================================= */
+
+.scene-line-top {
+  width: 100%;
+
+  height: clamp(
+    3px,
+    0.35vw,
+    7px
+  );
+
+  left: 50%;
+
+  top: -3px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.scene-line-bottom {
+  width: 100%;
+
+  height: clamp(
+    3px,
+    0.35vw,
+    7px
+  );
+
+  left: 50%;
+
+  bottom: 5px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* =========================================================
+   SILVER FRAME — DESKTOP
+========================================================= */
+
+.display-frame {
+  position: absolute;
+
+  left: 4.01%;
+
+  top: 49%;
+
+  height:
+    min(
+      95%,
+      31.667vw
+    );
+
+  width: auto;
+
+  transform:
+    translateY(-50%);
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   OVAL GROUP
+========================================================= */
+
+.oval-group {
+  position: absolute;
+
+  left: 23.02%;
+
+  top: 50%;
+
+  aspect-ratio:
+    1773 / 632;
+
+  height:
+    min(
+      89.14%,
+      32.9167vw
+    );
+
+  width: auto;
+
+  transform:
+    translateY(-50%);
+
+  z-index: 2;
+
+  container-type:
+    inline-size;
+}
+
+
+/* =========================================================
+   PINK OVAL
+========================================================= */
+
+.about-oval {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MY PICTURE
+========================================================= */
+
+.my-picture {
+  position: absolute;
+
+  left: 1.128%;
+
+  top: 7%;
+
+  width: 25.607%;
+
+  height: auto;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   ABOUT TITLE GROUP
+========================================================= */
+
+.about-heading {
+  position: absolute;
+
+  left: 37%;
+
+  top: -7%;
+
+  width: 38.579%;
+
+  display: grid;
+
+  place-items: center;
+
+  z-index: 6;
+}
+
+
+/* TITLE FRAME */
+
+.about-title-frame {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+}
+
+
+/* ABOUT ME WORDS */
+
+.about-heading h1 {
+  grid-column: 1;
+  grid-row: 1;
+
+  position: relative;
+
+  z-index: 2;
+
+  font-family:
+    "Mystery Quest",
+    cursive;
+
+  font-size:
+    clamp(
+      2rem,
+      5.55cqw,
+      6.7rem
+    );
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  color: #000;
+
+  transform:
+    translateY(-4%)
+    rotate(-2deg);
+}
+
+
+/* =========================================================
+   NEXT PAGE
+========================================================= */
+
+.next-page {
+  position: absolute;
+
+  left: 67%;
+
+  top: 27.057%;
+
+  width: 14.89%;
+
+  display: grid;
+
+  place-items: center;
+
+  z-index: 8;
+
+  text-decoration: none;
+
+  pointer-events: auto;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.next-page img,
+.next-page span {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.next-page img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+.next-page span {
+  position: relative;
+
+  z-index: 2;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      0.75rem,
+      2cqw,
+      2.4rem
+    );
+
+  color: white;
+
+  white-space: nowrap;
+
+  transform:
+    translate(
+      -5%,
+      -5%
+    )
+    rotate(-6deg);
+}
+
+
+.next-page:hover {
+  transform:
+    translateX(5%)
+    scale(1.04);
+}
+
+
+/* =========================================================
+   BOTTOM FRAME
+========================================================= */
+
+.site-footer {
+  grid-column: 1;
+  grid-row: 3;
+
+  position: relative;
+
+  width: 100%;
+
+  height: clamp(
+    58px,
+    5vw,
+    92px
+  );
+
+  overflow: hidden;
+
+  z-index: 30;
+
+  line-height: 0;
+
+  transform:
+    translateY(14%);
+}
+
+
+/* PURPLE FRAME IMAGE */
+
+.bottom-frame-img {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.bottom-marquee {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.marquee-track {
+  display: flex;
+
+  width: max-content;
+
+  animation:
+    bottom-marquee-scroll
+    16s
+    linear
+    infinite;
+}
+
+
+.marquee-content {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  gap:
+    clamp(
+      40px,
+      5vw,
+      90px
+    );
+
+  padding-right:
+    clamp(
+      40px,
+      5vw,
+      90px
+    );
+}
+
+
+.marquee-content span {
+  display: block;
+
+  color: white;
+
+  font-family:
+    "Mystery Quest",
+    cursive;
+
+  font-size:
+    clamp(
+      1.1rem,
+      2vw,
+      2.3rem
+    );
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  text-shadow:
+    2px 3px 0
+    rgba(0, 0, 0, 0.25);
+}
+
+
+@keyframes bottom-marquee-scroll {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   <= 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  :root {
+    --nav-height:
+      clamp(
+        90px,
+        12vw,
+        125px
+      );
+
+    --footer-height:
+      clamp(
+        45px,
+        6vw,
+        65px
+      );
+  }
+
+
+  /* =====================================================
+     PAGE
+
+     FIX:
+     No more forced 950px+ middle section.
+     Everything fits the viewport.
+  ====================================================== */
+
+  body {
+    overflow: hidden;
+  }
+
+
+  .page {
+    width: 100%;
+
+    height: 100svh;
+    min-height: 100svh;
+
+    grid-template-rows:
+      var(--nav-height)
+      minmax(0, 1fr)
+      var(--footer-height);
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     TABLET NAV FRAME
+
+     frame_phone1.png uses the full header height.
+  ====================================================== */
+
+  .nav-frame-group {
+    width: 100%;
+
+    height: 100%;
+
+    left: 50%;
+
+    top: 0;
+
+    transform:
+      translateX(-50%);
+  }
+
+
+  /* =====================================================
+     GREEN AREA OF frame_phone1.png
+
+     The logo and menu are now positioned relative
+     to this green strip instead of the whole screen.
+  ====================================================== */
+
+  .nav-green-zone {
+    left: 0;
+    right: 0;
+
+    top: 31%;
+    bottom: 0;
+
+    width: auto;
+    height: auto;
+
+    overflow: hidden;
+
+    pointer-events: none;
+  }
+
+
+  /* DESKTOP BUTTONS DISAPPEAR */
+
+  .nav-buttons {
+    display: none;
+  }
+
+
+  /* =====================================================
+     LOGO
+
+     Height is relative to the GREEN BAR HEIGHT.
+  ====================================================== */
+
+  .site-logo {
+    position: absolute;
+
+    left: 3%;
+    top: 50%;
+
+    width: auto;
+    height: 62%;
+
+    transform:
+      translateY(-50%);
+
+    z-index: 10;
+
+    pointer-events: auto;
+  }
+
+
+  .site-logo img {
+    display: block;
+
+    width: auto;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+  }
+
+
+  /* =====================================================
+     MENU PNG BUTTON
+
+     Height is also relative to GREEN BAR HEIGHT.
+  ====================================================== */
+
+  .menu-toggle {
+    display: block !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: absolute;
+
+    right: 3%;
+    top: 50%;
+
+    width: auto;
+    height: 68%;
+
+    aspect-ratio: 1 / 1;
+
+    transform:
+      translateY(-50%);
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    z-index: 150;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+    line-height: 0;
+  }
+
+
+  .menu-toggle img {
+    display: block !important;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    pointer-events: none;
+  }
+
+
+  /* =====================================================
+     MOBILE MENU
+  ====================================================== */
+
+  .menu-backdrop {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+      rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: 500;
+  }
+
+
+  .mobile-menu {
+    display: grid;
+
+    grid-template-rows:
+      auto
+      1fr;
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width:
+      min(
+        68vw,
+        430px
+      );
+
+    height: 100dvh;
+
+    padding:
+      clamp(
+        25px,
+        5vw,
+        48px
+      );
+
+    background:
+      #25127f;
+
+    transform:
+      translateX(100%);
+
+    transition:
+      transform 0.35s ease;
+
+    z-index: 600;
+  }
+
+
+  .menu-close {
+    justify-self: end;
+
+    border: 0;
+
+    background:
+      transparent;
+
+    color:
+      white;
+
+    font-family:
+      Arial,
+      sans-serif;
+
+    font-size:
+      3rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+
+  .mobile-menu-links {
+    align-self: center;
+
+    display: grid;
+
+    width: 100%;
+  }
+
+
+  .mobile-menu-links a {
+    padding:
+      20px
+      5px;
+
+    border-bottom:
+      2px solid
+      rgba(255, 255, 255, 0.32);
+
+    color:
+      white;
+
+    text-decoration:
+      none;
+
+    text-align:
+      right;
+
+    font-family:
+      "Mystery Quest",
+      cursive;
+
+    font-size:
+      clamp(
+        2rem,
+        5vw,
+        3.2rem
+      );
+  }
+
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+
+  body.menu-open
+  .mobile-menu {
+    transform:
+      translateX(0);
+  }
+
+
+  body.menu-open
+  .menu-backdrop {
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+
+  /* =====================================================
+     REMOVE BLUE LINES ON TABLET + PHONE
+  ====================================================== */
+
+  .scene-line,
+  .scene-line-top,
+  .scene-line-bottom {
+    display: none;
+  }
+
+
+  /* =====================================================
+     ABOUT SCENE
+
+     FIX:
+     Responsive gap is now handled by row-gap.
+
+     The remaining available space automatically
+     scales between the oval and silver frame.
+  ====================================================== */
+
+  .about-scene {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      minmax(0, 44fr)
+      minmax(0, 56fr);
+
+    /*
+       AUTOMATIC RESPONSIVE SPACE
+
+       smaller tablet = closer to 22px
+       larger tablet  = grows toward 42px
+    */
+
+    row-gap:
+      clamp(
+        22px,
+        3vw,
+        42px
+      );
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     OVAL GROUP
+  ====================================================== */
+
+  .oval-group {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    left: auto;
+    top: auto;
+
+    align-self: end;
+    justify-self: center;
+
+    width:
+      min(
+        110vw,
+        1180px
+      );
+
+    height: auto;
+
+    aspect-ratio:
+      1773 / 632;
+
+    transform: none;
+
+    z-index: 3;
+
+    container-type:
+      inline-size;
+  }
+
+
+  /* PICTURE */
+
+  .my-picture {
+    display: block;
+
+    left: 13%;
+
+    top: 8%;
+
+    width: 26%;
+  }
+
+
+  /* YELLOW TITLE */
+
+  .about-heading {
+    left: 44%;
+
+    top: -22%;
+
+    width: 46%;
+  }
+
+
+  .about-heading h1 {
+    font-size:
+      clamp(
+        2.4rem,
+        6cqw,
+        5rem
+      );
+  }
+
+
+  /* NO NEXT PAGE */
+
+  .next-page {
+    display: none;
+  }
+
+
+  /* =====================================================
+     SILVER FRAME
+
+     No negative margin anymore.
+     The row-gap above controls its distance.
+  ====================================================== */
+
+  .display-frame {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    left: auto;
+    top: auto;
+
+    align-self: start;
+    justify-self: center;
+
+    height:
+      min(
+        94%,
+        56vw
+      );
+
+    width: auto;
+
+    max-width: 50vw;
+
+    transform: none;
+
+    margin-top: 0;
+
+    z-index: 4;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ====================================================== */
+
+  .site-footer {
+    height: 100%;
+
+    transform:
+      translateY(10%);
+  }
+
+
+  .marquee-content span {
+    font-size:
+      clamp(
+        1rem,
+        2.5vw,
+        1.8rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   <= 700PX
+========================================================= */
+
+@media (max-width: 700px) {
+
+  :root {
+    --nav-height:
+      clamp(
+        82px,
+        15vw,
+        105px
+      );
+
+    --footer-height:
+      clamp(
+        42px,
+        10vw,
+        55px
+      );
+  }
+
+
+  /* =====================================================
+     PAGE
+  ====================================================== */
+
+  .page {
+    width: 100%;
+
+    height: 100svh;
+    min-height: 100svh;
+
+    grid-template-rows:
+      var(--nav-height)
+      minmax(0, 1fr)
+      var(--footer-height);
+  }
+
+
+  /* =====================================================
+     NAV
+
+     No logo/menu size override here.
+
+     They inherit the <= 1100px green-zone system so
+     they stay attached to the green nav frame.
+  ====================================================== */
+
+
+  /* =====================================================
+     MENU PANEL
+  ====================================================== */
+
+  .mobile-menu {
+    width: 78vw;
+
+    padding:
+      28px
+      24px;
+  }
+
+
+  .mobile-menu-links a {
+    font-size:
+      clamp(
+        2rem,
+        8vw,
+        3rem
+      );
+  }
+
+
+  /* =====================================================
+     PHONE ABOUT SCENE
+
+     FIX:
+     Responsive gap scales automatically.
+  ====================================================== */
+
+  .about-scene {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      minmax(0, 40fr)
+      minmax(0, 60fr);
+
+    /*
+       AUTOMATIC PHONE GAP
+
+       small phone = around 16px
+       larger phone = grows toward 30px
+    */
+
+    row-gap:
+      clamp(
+        16px,
+        4vw,
+        30px
+      );
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     PINK GROUP
+  ====================================================== */
+
+  .oval-group {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    left: auto;
+    top: auto;
+
+    align-self: end;
+    justify-self: center;
+
+    width: 122vw;
+
+    height: auto;
+
+    aspect-ratio:
+      1773 / 632;
+
+    transform: none;
+
+    margin: 0;
+  }
+
+
+  /* YOUR PHOTO */
+
+  .my-picture {
+    display: block;
+
+    left: 13%;
+
+    top: 8%;
+
+    width: 27%;
+  }
+
+
+  /* YELLOW ABOUT TITLE */
+
+  .about-heading {
+    left: 43%;
+
+    top: -25%;
+
+    width: 50%;
+  }
+
+
+  .about-heading h1 {
+    font-size:
+      clamp(
+        2.1rem,
+        6.2cqw,
+        4rem
+      );
+  }
+
+
+  /* NO NEXT PAGE */
+
+  .next-page {
+    display: none;
+  }
+
+
+  /* =====================================================
+     SILVER FRAME
+
+     No negative margin anymore.
+     Distance is controlled by row-gap.
+  ====================================================== */
+
+  .display-frame {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    left: auto;
+    top: auto;
+
+    align-self: start;
+    justify-self: center;
+
+    height:
+      min(
+        94%,
+        90vw
+      );
+
+    width: auto;
+
+    max-width: 68vw;
+
+    transform: none;
+
+    margin: 0;
+
+    z-index: 4;
+  }
+
+
+  /* =====================================================
+     MARQUEE
+  ====================================================== */
+
+  .marquee-track {
+    animation-duration:
+      12s;
+  }
+
+
+  .marquee-content {
+    gap:
+      clamp(
+        25px,
+        7vw,
+        40px
+      );
+
+    padding-right:
+      clamp(
+        25px,
+        7vw,
+        40px
+      );
+  }
+
+
+  .marquee-content span {
+    font-size:
+      clamp(
+        0.9rem,
+        4vw,
+        1.3rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .oval-group {
+    width:
+      130vw;
+  }
+
+
+  .display-frame {
+    height:
+      min(
+        94%,
+        90vw
+      );
+
+    width: auto;
+
+    max-width:
+      66vw;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .marquee-track {
+    animation:
+      none;
+  }
+
+
+  .mobile-menu {
+    transition:
+      none;
+  }
+
+
+  .menu-backdrop {
+    transition:
+      none;
+  }
+
+}
+
+/* =========================================================
+   WORKS PAGE
+========================================================= */
+
+.works-scene {
+  grid-column: 1;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  /*
+     Allows the works content to respond to the
+     ACTUAL available middle section.
+  */
+  container-type: size;
+}
+
+
+/* =========================================================
+   WORK CATEGORY GRID
+========================================================= */
+
+.works-category-grid {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  align-items: center;
+
+  column-gap:
+    clamp(
+      10px,
+      2.5vw,
+      55px
+    );
+
+  /*
+     Vertical padding guarantees the assets
+     never touch the navbar or footer.
+  */
+  padding:
+    clamp(
+      18px,
+      3cqh,
+      42px
+    )
+    clamp(
+      20px,
+      6vw,
+      120px
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   EACH CATEGORY
+========================================================= */
+
+.work-category {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   CATEGORY BUTTON
+
+   IMPORTANT:
+
+   The asset size is primarily controlled by the
+   HEIGHT of the available Works area.
+
+   That prevents it from becoming too tall on short
+   laptop / desktop screens.
+========================================================= */
+
+.work-category-button {
+  position: relative;
+
+  z-index: 5;
+
+  display: block;
+
+  /*
+     Responsive height based on the actual
+     middle content area.
+  */
+  height:
+    min(
+      68cqh,
+      430px
+    );
+
+  /*
+     Never allow it to exceed its grid cell.
+  */
+  max-height:
+    calc(
+      100% - 20px
+    );
+
+  width: auto;
+
+  text-decoration: none;
+
+  transform-origin:
+    center center;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    filter 0.25s ease;
+
+  will-change:
+    transform;
+}
+
+
+.work-category-button img {
+  display: block;
+
+  width: auto;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.work-preview {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  /*
+     Responsive preview.
+
+     It also uses the available width of each grid cell.
+  */
+  width:
+    min(
+      68%,
+      320px
+    );
+
+  max-height:
+    82%;
+
+  aspect-ratio:
+    4 / 3;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  /*
+     Preview starts behind/near the button,
+     then moves LEFT when hovered.
+  */
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(0.84);
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.work-preview img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      8px
+      10px
+      7px
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+
+/* =========================================================
+   SHOW PREVIEW
+========================================================= */
+
+.work-category:hover
+.work-preview,
+.work-category:focus-within
+.work-preview {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================================
+   ALL 3 BUTTONS:
+
+   - slide RIGHT
+   - rotate slightly
+   - preview appears LEFT
+
+   Same interaction for every category.
+========================================================= */
+
+
+/* =========================================================
+   FEATURED WORKS
+========================================================= */
+
+.work-category-featured:hover
+.work-category-button,
+.work-category-featured:focus-within
+.work-category-button {
+  transform:
+    translateX(52%)
+    rotate(4deg);
+}
+
+
+.work-category-featured:hover
+.work-preview,
+.work-category-featured:focus-within
+.work-preview {
+  transform:
+    translate(
+      -108%,
+      -50%
+    )
+    scale(1);
+}
+
+
+/* =========================================================
+   PHOTOGRAPHY
+========================================================= */
+
+.work-category-photo:hover
+.work-category-button,
+.work-category-photo:focus-within
+.work-category-button {
+  transform:
+    translateX(52%)
+    rotate(4deg);
+}
+
+
+.work-category-photo:hover
+.work-preview,
+.work-category-photo:focus-within
+.work-preview {
+  transform:
+    translate(
+      -108%,
+      -50%
+    )
+    scale(1);
+}
+
+
+/* =========================================================
+   PERSONAL DESIGNS
+========================================================= */
+
+.work-category-personal:hover
+.work-category-button,
+.work-category-personal:focus-within
+.work-category-button {
+  transform:
+    translateX(52%)
+    rotate(4deg);
+}
+
+
+.work-category-personal:hover
+.work-preview,
+.work-category-personal:focus-within
+.work-preview {
+  transform:
+    translate(
+      -108%,
+      -50%
+    )
+    scale(1);
+}
+
+
+/* =========================================================
+   BASIC HOVER FEEL
+========================================================= */
+
+.work-category-button:hover {
+  filter:
+    brightness(1.04);
+}
+
+
+.work-category-button:active {
+  transition-duration:
+    0.12s;
+
+  scale:
+    0.97;
+}
+
+
+/* =========================================================
+   LARGE / SHORT LAPTOP
+
+   This helps with screens such as:
+   1366 × 768
+   1920 × 800
+   etc.
+========================================================= */
+
+@media
+(max-width: 1500px),
+(max-height: 850px) {
+
+  .works-category-grid {
+    padding-top:
+      clamp(
+        12px,
+        2cqh,
+        26px
+      );
+
+    padding-bottom:
+      clamp(
+        12px,
+        2cqh,
+        26px
+      );
+  }
+
+
+  .work-category-button {
+    height:
+      min(
+        64cqh,
+        390px
+      );
+
+    max-height:
+      calc(
+        100% - 18px
+      );
+  }
+
+
+  .work-preview {
+    width:
+      min(
+        64%,
+        280px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   <= 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .works-category-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    column-gap:
+      clamp(
+        8px,
+        2vw,
+        24px
+      );
+
+    padding:
+      clamp(
+        14px,
+        2.5cqh,
+        28px
+      )
+      clamp(
+        12px,
+        3vw,
+        38px
+      );
+  }
+
+
+  .work-category-button {
+    height:
+      min(
+        62cqh,
+        360px
+      );
+
+    max-height:
+      calc(
+        100% - 16px
+      );
+  }
+
+
+  .work-preview {
+    width:
+      min(
+        70%,
+        230px
+      );
+  }
+
+
+  /*
+     Slightly smaller movement on tablet
+     so categories don't collide.
+  */
+
+  .work-category-featured:hover
+  .work-category-button,
+  .work-category-featured:focus-within
+  .work-category-button {
+    transform:
+      translateX(38%)
+      rotate(-4deg);
+  }
+
+
+  .work-category-photo:hover
+  .work-category-button,
+  .work-category-photo:focus-within
+  .work-category-button {
+    transform:
+      translateX(38%)
+      rotate(4deg);
+  }
+
+
+  .work-category-personal:hover
+  .work-category-button,
+  .work-category-personal:focus-within
+  .work-category-button {
+    transform:
+      translateX(38%)
+      rotate(-4deg);
+  }
+
+
+  .work-category-featured:hover
+  .work-preview,
+  .work-category-featured:focus-within
+  .work-preview,
+  .work-category-photo:hover
+  .work-preview,
+  .work-category-photo:focus-within
+  .work-preview,
+  .work-category-personal:hover
+  .work-preview,
+  .work-category-personal:focus-within
+  .work-preview {
+    transform:
+      translate(
+        -102%,
+        -50%
+      )
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   <= 700PX
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .works-category-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    column-gap:
+      clamp(
+        3px,
+        1vw,
+        10px
+      );
+
+    padding:
+      clamp(
+        12px,
+        3cqh,
+        22px
+      )
+      clamp(
+        6px,
+        2vw,
+        16px
+      );
+  }
+
+
+  /*
+     Buttons continue fitting themselves
+     according to the available page height.
+  */
+
+  .work-category-button {
+    height:
+      min(
+        58cqh,
+        310px
+      );
+
+    max-height:
+      calc(
+        100% - 14px
+      );
+  }
+
+
+  /*
+     Phones don't have real hover,
+     so the preview is disabled.
+
+     The 3 images continue working as links.
+  */
+
+  .work-preview {
+    display: none;
+  }
+
+
+  .work-category:hover
+  .work-category-button,
+  .work-category:focus-within
+  .work-category-button {
+    transform:
+      none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   <= 430PX
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .works-category-grid {
+    padding:
+      10px
+      4px;
+
+    column-gap:
+      2px;
+  }
+
+
+  .work-category-button {
+    height:
+      min(
+        55cqh,
+        270px
+      );
+
+    max-height:
+      calc(
+        100% - 12px
+      );
+  }
+
+}
+
+/* =========================================================
+   CATEGORY / WORK SELECT PAGE
+
+   Used by:
+   - featured-works.html
+   - photography.html
+   - personal-designs.html
+
+   IMPORTANT:
+
+   The category asset stays fixed on the LEFT.
+
+   The carousel on the RIGHT has:
+
+            SMALL PREVIOUS
+
+              BIG ACTIVE       TITLE
+
+              SMALL NEXT
+
+   Previous / active / next previews all share
+   the SAME horizontal center axis.
+========================================================= */
+
+.category-page {
+  grid-column: 1;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  /*
+     Keep the left category column stable across
+     different desktop aspect ratios.
+  */
+  grid-template-columns:
+    clamp(
+      130px,
+      18vw,
+      300px
+    )
+    minmax(0, 1fr);
+
+  overflow: hidden;
+
+  /*
+     Lets the vertical category asset size itself from
+     the ACTUAL middle area between navbar and footer.
+  */
+  container-type: size;
+}
+
+
+/* =========================================================
+   LEFT CATEGORY ASSET
+========================================================= */
+
+.category-marker {
+  grid-column: 1;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  /*
+     Gives the vertical asset consistent breathing room
+     instead of letting it hug the edge on wide screens.
+  */
+  padding:
+    clamp(
+      10px,
+      1.5vw,
+      28px
+    );
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+.category-marker img {
+  display: block;
+
+  width: auto;
+
+  /*
+     The asset now responds to the actual category-page
+     height, which is much more stable for vertical artwork.
+  */
+  height:
+    min(
+      66cqh,
+      450px
+    );
+
+  max-height:
+    calc(
+      100% - 28px
+    );
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      7px
+      9px
+      6px
+      rgba(0, 0, 0, 0.27)
+    );
+}
+
+
+/* =========================================================
+   CAROUSEL STAGE
+========================================================= */
+
+.project-carousel {
+  grid-column: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  outline: none;
+
+  /*
+     cqw / cqh below now respond to the actual
+     carousel space rather than the full browser.
+  */
+
+  container-type: size;
+
+  touch-action:
+    pan-x;
+}
+
+
+/* =========================================================
+   PROJECT SLIDES
+
+   Every project fills exactly the same stage.
+
+   JS only changes:
+   .is-prev
+   .is-active
+   .is-next
+   .is-hidden
+
+   We DON'T scale the whole slide anymore.
+========================================================= */
+
+.project-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PREVIEW LINK — BASE
+
+   ALL preview cards use the same left position.
+
+   This creates the straight vertical alignment
+   from your reference image.
+========================================================= */
+
+.project-preview-link {
+  position: absolute;
+
+  left: 42%;
+
+  top: 50%;
+
+  display: block;
+
+  width:
+    min(
+      45cqw,
+      65cqh,
+      520px
+    );
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  text-decoration: none;
+
+  z-index: 2;
+
+  transition:
+    top 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    width 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    opacity 0.3s ease,
+
+    transform 0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    filter 0.25s ease;
+}
+
+
+/* =========================================================
+   ACTIVE PROJECT
+
+   Large enough to be the focus,
+   but NOT huge like your current screenshot.
+========================================================= */
+
+.project-slide.is-active
+.project-preview-link {
+  left: 42%;
+
+  top: 50%;
+
+  width:
+    min(
+      45cqw,
+      65cqh,
+      520px
+    );
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  z-index: 10;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+
+/* =========================================================
+   PREVIOUS PROJECT
+
+   Small card ABOVE active project.
+
+   Same horizontal center.
+========================================================= */
+
+.project-slide.is-prev
+.project-preview-link {
+  left: 42%;
+
+  top: 17%;
+
+  width:
+    min(
+      21cqw,
+      25cqh,
+      215px
+    );
+
+  opacity: 0.9;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  z-index: 5;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+
+/* =========================================================
+   NEXT PROJECT
+
+   Small card BELOW active project.
+
+   Same horizontal center.
+========================================================= */
+
+.project-slide.is-next
+.project-preview-link {
+  left: 42%;
+
+  top: 83%;
+
+  width:
+    min(
+      21cqw,
+      25cqh,
+      215px
+    );
+
+  opacity: 0.9;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  z-index: 5;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+
+/* =========================================================
+   HIDDEN PROJECTS
+========================================================= */
+
+.project-slide.is-hidden
+.project-preview-link {
+  left: 42%;
+
+  top: 50%;
+
+  width:
+    min(
+      12cqw,
+      140px
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW FRAME
+========================================================= */
+
+.project-preview-frame {
+  position: relative;
+
+  width: 100%;
+
+  /*
+     Landscape like your reference.
+  */
+
+  aspect-ratio:
+    16 / 9;
+
+  padding:
+    clamp(
+      5px,
+      0.55cqw,
+      10px
+    );
+
+  border:
+    clamp(
+      5px,
+      0.55cqw,
+      10px
+    )
+    solid
+    #111;
+
+  border-radius:
+    clamp(
+      13px,
+      1.3cqw,
+      24px
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      #f3f3f3,
+      #777,
+      #eeeeee,
+      #555
+    );
+
+  box-shadow:
+    7px
+    9px
+    8px
+    rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BLACK INNER AREA
+========================================================= */
+
+.project-preview-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    clamp(
+      4px,
+      0.4cqw,
+      8px
+    );
+
+  border-radius:
+    clamp(
+      8px,
+      0.9cqw,
+      17px
+    );
+
+  background:
+    #000;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-preview-frame img {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius:
+    clamp(
+      6px,
+      0.7cqw,
+      14px
+    );
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   ACTIVE CARD HOVER
+========================================================= */
+
+.project-slide.is-active
+.project-preview-link:hover {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    translateY(-5px)
+    rotate(-0.8deg);
+
+  filter:
+    brightness(1.04);
+}
+
+
+/* =========================================================
+   SMALL PREVIEW HOVER
+
+   They are selection buttons.
+
+   Click small card ->
+   it becomes the active card.
+========================================================= */
+
+.project-slide.is-prev
+.project-preview-link:hover,
+.project-slide.is-next
+.project-preview-link:hover {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.06);
+}
+
+
+/* =========================================================
+   CLICK ACTIVE CARD
+========================================================= */
+
+.project-slide.is-active
+.project-preview-link:active {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(0.98);
+}
+
+
+/* =========================================================
+   PROJECT TEXT
+
+   IMPORTANT:
+
+   Text is positioned separately from the image.
+
+   Therefore it DOES NOT affect the carousel card's
+   horizontal or vertical alignment.
+========================================================= */
+
+.project-copy {
+  position: absolute;
+
+  left: 70%;
+
+  top: 50%;
+
+  width:
+    min(
+      26%,
+      370px
+    );
+
+  transform:
+    translateY(-50%);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  z-index: 20;
+
+  transition:
+    opacity 0.3s ease
+    0.12s;
+}
+
+
+/* =========================================================
+   ONLY ACTIVE PROJECT SHOWS TEXT
+========================================================= */
+
+.project-slide.is-active
+.project-copy {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   HIDE PREVIOUS / NEXT TEXT
+========================================================= */
+
+.project-slide.is-prev
+.project-copy,
+.project-slide.is-next
+.project-copy,
+.project-slide.is-hidden
+.project-copy {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.project-number {
+  margin-bottom:
+    clamp(
+      5px,
+      1cqh,
+      11px
+    );
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.68rem,
+      0.8cqw,
+      0.95rem
+    );
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.16em;
+
+  color:
+    #25127f;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.project-copy h1 {
+  margin-bottom:
+    clamp(
+      8px,
+      1.5cqh,
+      18px
+    );
+
+  font-family:
+    "Mystery Quest",
+    cursive;
+
+  font-size:
+    clamp(
+      1.75rem,
+      3cqw,
+      3.9rem
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    0.95;
+
+  color:
+    #25127f;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.project-copy > p:not(.project-number) {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.78rem,
+      0.95cqw,
+      1.05rem
+    );
+
+  line-height:
+    1.45;
+
+  color:
+    #161616;
+}
+
+
+/* =========================================================
+   CLICK TO EXPLORE
+========================================================= */
+
+.project-open-text {
+  display: inline-block;
+
+  margin-top:
+    clamp(
+      6px,
+      1.2cqh,
+      14px
+    );
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      0.7rem,
+      0.85cqw,
+      0.95rem
+    );
+
+  font-style:
+    italic;
+
+  color:
+    #25127f;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.carousel-scroll-hint {
+  position: absolute;
+
+  right:
+    clamp(
+      10px,
+      1.5vw,
+      24px
+    );
+
+  bottom:
+    clamp(
+      8px,
+      1.5cqh,
+      18px
+    );
+
+  display: grid;
+
+  justify-items: center;
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  font-family:
+    "Mystery Quest",
+    cursive;
+
+  font-size:
+    clamp(
+      0.72rem,
+      0.9vw,
+      1rem
+    );
+
+  color:
+    #25127f;
+
+  animation:
+    carousel-hint
+    1.4s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes carousel-hint {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+
+  50% {
+    transform:
+      translateY(5px);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE BUT SHORT DESKTOP / LAPTOP
+
+   Examples:
+   1366 × 768
+   1440 × 800
+   1920 × 800
+
+   The carousel automatically gets more compact.
+========================================================= */
+
+@media (max-height: 850px) {
+
+  .category-marker img {
+    height:
+      min(
+        61cqh,
+        370px
+      );
+  }
+
+
+  .project-slide.is-active
+  .project-preview-link {
+    width:
+      min(
+        42cqw,
+        60cqh,
+        470px
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link {
+    width:
+      min(
+        18cqw,
+        22cqh,
+        180px
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link {
+    top:
+      16%;
+  }
+
+
+  .project-slide.is-next
+  .project-preview-link {
+    top:
+      84%;
+  }
+
+
+  .project-copy {
+    left:
+      69%;
+
+    width:
+      min(
+        27%,
+        330px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+
+   Helps smaller laptops stay balanced.
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .category-page {
+    grid-template-columns:
+      clamp(
+        120px,
+        17vw,
+        240px
+      )
+      minmax(0, 1fr);
+  }
+
+
+  .project-preview-link,
+  .project-slide.is-active
+  .project-preview-link,
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link,
+  .project-slide.is-hidden
+  .project-preview-link {
+    left:
+      41%;
+  }
+
+
+  .project-slide.is-active
+  .project-preview-link {
+    width:
+      min(
+        43cqw,
+        61cqh,
+        470px
+      );
+  }
+
+
+  .project-copy {
+    left:
+      70%;
+
+    width:
+      min(
+        25%,
+        320px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   <= 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .category-page {
+    grid-template-columns:
+      clamp(
+        105px,
+        19vw,
+        175px
+      )
+      minmax(0, 1fr);
+  }
+
+
+  .category-marker {
+    padding:
+      clamp(
+        8px,
+        1.8vw,
+        18px
+      );
+  }
+
+
+  .category-marker img {
+    height:
+      min(
+        57cqh,
+        340px
+      );
+
+    max-width: 100%;
+  }
+
+
+  /*
+     The whole carousel moves slightly toward center
+     because the tablet has less horizontal room.
+  */
+
+  .project-preview-link,
+  .project-slide.is-active
+  .project-preview-link,
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link,
+  .project-slide.is-hidden
+  .project-preview-link {
+    left:
+      39%;
+  }
+
+
+  .project-slide.is-active
+  .project-preview-link {
+    width:
+      min(
+        49cqw,
+        57cqh,
+        430px
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link {
+    width:
+      min(
+        22cqw,
+        21cqh,
+        175px
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link {
+    top:
+      16%;
+  }
+
+
+  .project-slide.is-next
+  .project-preview-link {
+    top:
+      84%;
+  }
+
+
+  .project-copy {
+    left:
+      69%;
+
+    width:
+      27%;
+  }
+
+
+  .project-copy h1 {
+    font-size:
+      clamp(
+        1.5rem,
+        3.8cqw,
+        3rem
+      );
+  }
+
+
+  .project-copy > p:not(.project-number) {
+    font-size:
+      clamp(
+        0.72rem,
+        1.5cqw,
+        0.95rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   <= 700PX
+
+   On phone there is not enough room to put:
+   CATEGORY + LARGE CARD + TEXT
+
+   all horizontally.
+
+   So:
+   - category remains left
+   - carousel stays centered
+   - title goes underneath active preview
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .category-page {
+    grid-template-columns:
+      clamp(
+        72px,
+        20vw,
+        95px
+      )
+      minmax(0, 1fr);
+  }
+
+
+  .category-marker {
+    padding: 6px;
+  }
+
+
+  .category-marker img {
+    height:
+      min(
+        48cqh,
+        275px
+      );
+
+    max-width: 100%;
+  }
+
+
+  /*
+     All carousel cards become centered
+     in the available right-side region.
+  */
+
+  .project-preview-link,
+  .project-slide.is-active
+  .project-preview-link,
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link,
+  .project-slide.is-hidden
+  .project-preview-link {
+    left:
+      50%;
+  }
+
+
+  .project-slide.is-active
+  .project-preview-link {
+    top:
+      43%;
+
+    width:
+      min(
+        82cqw,
+        43cqh,
+        360px
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link {
+    top:
+      10%;
+
+    width:
+      min(
+        38cqw,
+        17cqh,
+        145px
+      );
+  }
+
+
+  .project-slide.is-next
+  .project-preview-link {
+    top:
+      72%;
+
+    width:
+      min(
+        38cqw,
+        17cqh,
+        145px
+      );
+  }
+
+
+  /* =====================================================
+     PHONE TEXT
+  ====================================================== */
+
+  .project-copy {
+    left:
+      50%;
+
+    top:
+      80%;
+
+    width:
+      80%;
+
+    text-align:
+      center;
+
+    transform:
+      translateX(-50%);
+  }
+
+
+  .project-slide.is-active
+  .project-copy {
+    transform:
+      translateX(-50%);
+  }
+
+
+  .project-number {
+    margin-bottom:
+      2px;
+
+    font-size:
+      0.6rem;
+  }
+
+
+  .project-copy h1 {
+    margin-bottom:
+      3px;
+
+    font-size:
+      clamp(
+        1.2rem,
+        5.5cqw,
+        1.9rem
+      );
+
+    line-height:
+      1;
+  }
+
+
+  /*
+     Description is hidden on small screens
+     so the carousel can stay balanced.
+  */
+
+  .project-copy > p:not(.project-number) {
+    display:
+      none;
+  }
+
+
+  .project-open-text {
+    margin-top:
+      2px;
+
+    font-size:
+      0.66rem;
+  }
+
+
+  .carousel-scroll-hint {
+    display:
+      none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   <= 430PX
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .category-page {
+    grid-template-columns:
+      clamp(
+        64px,
+        19vw,
+        78px
+      )
+      minmax(0, 1fr);
+  }
+
+
+  .category-marker {
+    padding: 4px;
+  }
+
+
+  .category-marker img {
+    height:
+      min(
+        45cqh,
+        245px
+      );
+
+    max-width: 100%;
+  }
+
+
+  .project-slide.is-active
+  .project-preview-link {
+    width:
+      min(
+        86cqw,
+        40cqh
+      );
+  }
+
+
+  .project-slide.is-prev
+  .project-preview-link,
+  .project-slide.is-next
+  .project-preview-link {
+    width:
+      min(
+        37cqw,
+        15cqh
+      );
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-preview-link,
+  .project-copy {
+    transition:
+      none;
+  }
+
+
+  .carousel-scroll-hint {
+    animation:
+      none;
+  }
+
+}
+
+/* =========================================================
+   CONTACT PAGE
+
+   Updated:
+   - larger CD
+   - larger responsive contact buttons
+   - no button rotation
+   - no button scaling
+   - hover only rises slightly
+========================================================= */
+
+.contact-scene {
+  grid-column: 1;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.15fr);
+
+  align-items: center;
+
+  column-gap:
+    clamp(
+      28px,
+      4vw,
+      80px
+    );
+
+  padding:
+    clamp(
+      10px,
+      2cqh,
+      26px
+    )
+    clamp(
+      28px,
+      4vw,
+      80px
+    );
+
+  overflow: hidden;
+
+  /*
+     Lets contact-page sizing respond to the actual
+     middle section between navbar and footer.
+  */
+  container-type: size;
+}
+
+
+/* =========================================================
+   LEFT CD AREA
+========================================================= */
+
+.contact-disc-area {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  place-items: center;
+}
+
+
+/* =========================================================
+   CONTACT CD
+
+   Larger than before, but still constrained by both
+   the available column and the middle-section height.
+========================================================= */
+
+.contact-disc {
+  display: block;
+
+  width:
+    min(
+      94%,
+      78cqh,
+      680px
+    );
+
+  height: auto;
+
+  max-height: 96%;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  transform-origin:
+    center center;
+
+  animation:
+    contact-disc-spin
+    18s
+    linear
+    infinite;
+
+  filter:
+    drop-shadow(
+      8px
+      11px
+      8px
+      rgba(0, 0, 0, 0.18)
+    );
+}
+
+
+/* =========================================================
+   CD ROTATION
+========================================================= */
+
+@keyframes contact-disc-spin {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   RIGHT CONTACT BUTTON AREA
+========================================================= */
+
+.contact-links {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  row-gap:
+    clamp(
+      16px,
+      3cqh,
+      32px
+    );
+
+  align-content: center;
+
+  justify-items: start;
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+
+   The whole original PNG stays proportional.
+   Width follows the available right column, so the
+   buttons automatically get smaller on narrower screens.
+========================================================= */
+
+.contact-link {
+  position: relative;
+
+  display: grid;
+
+  align-items: center;
+
+  width:
+    min(
+      96%,
+      720px
+    );
+
+  text-decoration: none;
+
+  transform:
+    translateY(0);
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   IMAGE + TEXT SHARE SAME GRID CELL
+========================================================= */
+
+.contact-link img,
+.contact-link-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+/* =========================================================
+   BUTTON IMAGE
+========================================================= */
+
+.contact-link img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      5px
+      7px
+      5px
+      rgba(0, 0, 0, 0.16)
+    );
+}
+
+
+/* =========================================================
+   TEXT INSIDE PURPLE BAR
+========================================================= */
+
+.contact-link-text {
+  position: relative;
+
+  z-index: 5;
+
+  width: 76%;
+
+  margin-left: 20%;
+
+  padding-right: 5%;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  color: white;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.82rem,
+      1.1vw,
+      1.25rem
+    );
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.03em;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+
+   ONLY rises a little.
+
+   NO rotation.
+   NO scale.
+   NO horizontal movement.
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .contact-link:hover {
+    transform:
+      translateY(-4px);
+  }
+
+}
+
+
+/* =========================================================
+   BUTTON PRESS
+========================================================= */
+
+.contact-link:active {
+  transform:
+    translateY(-1px);
+
+  transition-duration:
+    0.08s;
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / LAPTOP
+
+   Examples:
+   1366 × 768
+   1440 × 800
+   1920 × 800
+========================================================= */
+
+@media (max-height: 850px) {
+
+  .contact-scene {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+
+  .contact-disc {
+    width:
+      min(
+        92%,
+        72cqh,
+        590px
+      );
+  }
+
+
+  .contact-links {
+    row-gap:
+      clamp(
+        12px,
+        2.3cqh,
+        22px
+      );
+  }
+
+
+  .contact-link {
+    width:
+      min(
+        95%,
+        650px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+   <= 1400PX
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .contact-scene {
+    grid-template-columns:
+      minmax(0, 0.92fr)
+      minmax(0, 1.08fr);
+
+    column-gap:
+      clamp(
+        22px,
+        3.5vw,
+        50px
+      );
+
+    padding-left:
+      clamp(
+        20px,
+        3vw,
+        48px
+      );
+
+    padding-right:
+      clamp(
+        20px,
+        3vw,
+        48px
+      );
+  }
+
+
+  .contact-disc {
+    width:
+      min(
+        94%,
+        70cqh,
+        540px
+      );
+  }
+
+
+  .contact-link {
+    width:
+      min(
+        97%,
+        590px
+      );
+  }
+
+
+  .contact-link-text {
+    font-size:
+      clamp(
+        0.76rem,
+        1.2vw,
+        1.08rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   <= 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .contact-scene {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+
+    column-gap:
+      clamp(
+        14px,
+        2.5vw,
+        28px
+      );
+
+    padding:
+      clamp(
+        8px,
+        1.6cqh,
+        16px
+      )
+      clamp(
+        12px,
+        2.5vw,
+        24px
+      );
+  }
+
+
+  .contact-disc {
+    width:
+      min(
+        96%,
+        64cqh,
+        460px
+      );
+  }
+
+
+  .contact-links {
+    row-gap:
+      clamp(
+        10px,
+        2.2cqh,
+        20px
+      );
+  }
+
+
+  .contact-link {
+    width:
+      min(
+        100%,
+        500px
+      );
+  }
+
+
+  .contact-link-text {
+    font-size:
+      clamp(
+        0.7rem,
+        1.5vw,
+        1rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   <= 700PX
+
+   Layout becomes:
+
+          CD
+
+       PHONE
+       EMAIL
+       INSTAGRAM
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .contact-scene {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      minmax(0, 54fr)
+      minmax(0, 46fr);
+
+    row-gap:
+      clamp(
+        4px,
+        1cqh,
+        8px
+      );
+
+    padding:
+      4px
+      clamp(
+        10px,
+        4vw,
+        20px
+      );
+  }
+
+
+  .contact-disc-area {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+
+  .contact-disc {
+    width:
+      min(
+        88%,
+        50cqh,
+        360px
+      );
+
+    max-height: 98%;
+  }
+
+
+  .contact-links {
+    grid-column: 1;
+    grid-row: 2;
+
+    width:
+      min(
+        94%,
+        500px
+      );
+
+    justify-self: center;
+
+    justify-items: center;
+
+    align-content: start;
+
+    row-gap:
+      clamp(
+        6px,
+        1.35cqh,
+        12px
+      );
+  }
+
+
+  .contact-link {
+    width: 100%;
+  }
+
+
+  .contact-link-text {
+    font-size:
+      clamp(
+        0.68rem,
+        3vw,
+        0.95rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   <= 430PX
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .contact-scene {
+    grid-template-rows:
+      minmax(0, 51fr)
+      minmax(0, 49fr);
+
+    padding:
+      3px
+      8px;
+  }
+
+
+  .contact-disc {
+    width:
+      min(
+        90%,
+        46cqh,
+        300px
+      );
+  }
+
+
+  .contact-links {
+    width: 96%;
+
+    row-gap:
+      clamp(
+        5px,
+        1.1cqh,
+        9px
+      );
+  }
+
+
+  .contact-link {
+    width: 100%;
+  }
+
+
+  .contact-link-text {
+    font-size:
+      clamp(
+        0.6rem,
+        3vw,
+        0.82rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-disc {
+    animation:
+      none;
+  }
+
+
+  .contact-link {
+    transition:
+      none;
+  }
+
+}
+
+/* =========================================================
+   WORK DETAIL PAGE
+
+   Uses:
+   work_showcase.png        1289 × 652
+   details_description.png  496 × 652
+
+   Both frame assets share the SAME responsive height so
+   their top and bottom edges stay aligned on desktop/tablet.
+========================================================= */
+
+.work-detail-scene {
+  grid-column: 1;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  container-type: size;
+}
+
+
+/* =========================================================
+   MASTER DETAIL LAYOUT
+
+   Larger than the previous version while still respecting
+   BOTH the available middle-section width and height.
+========================================================= */
+
+.work-detail-layout {
+  /*
+     Because the left frame is 1289/652 and the right frame
+     is 496/652, using one shared height keeps them perfectly
+     aligned.
+
+     The width limiter also guarantees the entire composition
+     fits horizontally.
+  */
+  --detail-frame-height:
+    min(
+      88cqh,
+      31cqw,
+      660px
+    );
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap:
+    clamp(
+      12px,
+      1.55cqw,
+      30px
+    );
+
+  padding:
+    clamp(
+      4px,
+      0.9cqh,
+      12px
+    )
+    clamp(
+      8px,
+      1.35cqw,
+      24px
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT SHOWCASE PANEL
+   Original ratio: 1289 / 652
+========================================================= */
+
+.work-showcase-panel {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  height:
+    var(--detail-frame-height);
+
+  aspect-ratio:
+    1289 / 652;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+
+/* =========================================================
+   SHOWCASE FRAME ASSET
+========================================================= */
+
+.work-showcase-frame {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 1;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   SHOWCASE SCREEN
+========================================================= */
+
+.work-screen-window {
+  position: absolute;
+
+  left: 1.5%;
+  right: 1.5%;
+
+  top: 11.7%;
+  bottom: 3.7%;
+
+  display: grid;
+
+  /* CENTER MEDIA INSIDE THIS BLACK WINDOW */
+  place-items: center;
+
+  overflow: hidden;
+
+  background: #000;
+
+  z-index: 3;
+}
+
+
+.work-screen-window {
+  position: absolute;
+
+  left: 1.5%;
+  right: 1.5%;
+
+  top: 11.7%;
+  bottom: 3.7%;
+
+  overflow: hidden;
+
+  background: #000;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   MEDIA VISIBILITY
+========================================================= */
+
+.work-media-item {
+  display: block;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+
+.work-media-item.is-active {
+  opacity: 1;
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   IMAGE
+
+   CENTERED INSIDE .work-screen-window
+   NOT CENTERED TO THE WHOLE PAGE
+========================================================= */
+
+img.work-media-item {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: auto;
+  height: auto;
+
+  max-width: 88%;
+  max-height: 90%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: translate(-50%, -50%);
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+video.work-media-item,
+.work-media-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: none;
+
+  background: #000;
+}
+
+/* =========================================================
+   VERSION CONTROLS
+========================================================= */
+
+.work-version-controls {
+  flex:
+    0 0 auto;
+
+  align-self: center;
+
+  display: grid;
+
+  justify-items: center;
+
+  gap:
+    clamp(
+      30px,
+      8cqh,
+      72px
+    );
+}
+
+
+/* =========================================================
+   UP / DOWN BUTTONS
+========================================================= */
+
+.work-version-button {
+  display: block;
+
+  width:
+    clamp(
+      38px,
+      3.4cqw,
+      58px
+    );
+
+  aspect-ratio:
+    1 / 1;
+
+  padding: 0;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.work-version-button img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-version-button:hover {
+    transform:
+      translateY(-3px);
+  }
+
+}
+
+
+.work-version-button:active {
+  transform:
+    translateY(0)
+    scale(0.96);
+}
+
+
+/* Hide controls automatically when a work has only one media item. */
+
+.work-version-controls.is-disabled {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   RIGHT INFO PANEL
+   Original ratio: 496 / 652
+
+   Uses EXACTLY the same height as the left frame.
+========================================================= */
+
+.work-info-panel {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  height:
+    var(--detail-frame-height);
+
+  aspect-ratio:
+    496 / 652;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+
+/* =========================================================
+   INFORMATION FRAME ASSET
+========================================================= */
+
+.work-info-frame {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SEE OTHER WORKS BUTTON
+
+   The arrow is already baked into details_description.png.
+   This link covers the arrow + text in the purple top bar.
+========================================================= */
+
+.work-detail-back {
+  position: absolute;
+
+  left: 3%;
+  top: 2%;
+
+  width: 78%;
+  height: 10%;
+
+  display: flex;
+
+  align-items: center;
+
+  /*
+     Leaves room for the white arrow already drawn
+     into the PNG.
+  */
+  padding-left: 31%;
+
+  z-index: 10;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.55rem,
+      1.35cqh,
+      0.95rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.work-detail-back span {
+  display: block;
+
+  pointer-events: none;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-detail-back:hover {
+    transform:
+      translateX(-3px);
+
+    opacity: 0.82;
+  }
+
+}
+
+
+/* =========================================================
+   TITLE AREA
+========================================================= */
+
+.work-detail-title {
+  position: absolute;
+
+  left: 7%;
+  right: 7%;
+
+  top: 14%;
+  height: 22%;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 5%;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+
+.work-detail-title h1 {
+  color:
+    white;
+
+  font-family:
+    "Mystery Quest",
+    cursive;
+
+  font-size:
+    clamp(
+      1rem,
+      2.3cqh,
+      2.45rem
+    );
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DESCRIPTION AREA
+
+   Only this area scrolls when text becomes long.
+========================================================= */
+
+.work-detail-description {
+  position: absolute;
+
+  left: 6%;
+  right: 6%;
+
+  top: 39%;
+  bottom: 5%;
+
+  padding:
+    clamp(
+      10px,
+      2cqh,
+      22px
+    )
+    clamp(
+      9px,
+      1.4cqw,
+      18px
+    );
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior:
+    contain;
+
+  z-index: 5;
+
+  color:
+    #111;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      0.67rem,
+      1.45cqh,
+      1rem
+    );
+
+  line-height: 1.5;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #25127f
+    transparent;
+}
+
+
+.work-detail-description p + p {
+  margin-top:
+    1em;
+}
+
+
+.work-detail-description::-webkit-scrollbar {
+  width:
+    6px;
+}
+
+
+.work-detail-description::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+.work-detail-description::-webkit-scrollbar-thumb {
+  background:
+    #25127f;
+
+  border-radius:
+    999px;
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / LAPTOP
+   Examples: 1366×768, 1440×800, 1920×800
+========================================================= */
+
+@media (max-height: 850px) {
+
+  .work-detail-layout {
+    --detail-frame-height:
+      min(
+        86cqh,
+        30cqw,
+        590px
+      );
+
+    gap:
+      clamp(
+        10px,
+        1.35cqw,
+        24px
+      );
+
+    padding-top:
+      4px;
+
+    padding-bottom:
+      4px;
+  }
+
+
+  .work-version-controls {
+    gap:
+      clamp(
+        26px,
+        7cqh,
+        58px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+   <= 1400PX
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .work-detail-layout {
+    --detail-frame-height:
+      min(
+        84cqh,
+        29.5cqw,
+        540px
+      );
+
+    gap:
+      clamp(
+        9px,
+        1.2cqw,
+        21px
+      );
+
+    padding:
+      5px
+      9px;
+  }
+
+
+  .work-version-button {
+    width:
+      clamp(
+        34px,
+        3.5cqw,
+        50px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   <= 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .work-detail-layout {
+    --detail-frame-height:
+      min(
+        73cqh,
+        28.5cqw,
+        450px
+      );
+
+    gap:
+      clamp(
+        7px,
+        1cqw,
+        15px
+      );
+
+    padding:
+      5px;
+  }
+
+
+  .work-version-controls {
+    gap:
+      clamp(
+        18px,
+        5cqh,
+        38px
+      );
+  }
+
+
+  .work-version-button {
+    width:
+      clamp(
+        28px,
+        4cqw,
+        42px
+      );
+  }
+
+
+  .work-detail-back {
+    font-size:
+      clamp(
+        0.48rem,
+        1.25cqh,
+        0.75rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   PHONE / NARROW TABLET
+   <= 700PX
+
+   Frames stack vertically so they remain readable.
+   Only the middle detail area scrolls.
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .work-detail-scene {
+    display: block;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width:
+      none;
+  }
+
+
+  .work-detail-scene::-webkit-scrollbar {
+    display:
+      none;
+  }
+
+
+  .work-detail-layout {
+    --detail-frame-height:
+      auto;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    justify-items: center;
+
+    gap:
+      clamp(
+        12px,
+        3vw,
+        20px
+      );
+
+    padding:
+      14px
+      8px
+      24px;
+  }
+
+
+  /* LEFT SHOWCASE */
+
+  .work-showcase-panel {
+    width:
+      min(
+        97%,
+        680px
+      );
+
+    height: auto;
+
+    aspect-ratio:
+      1289 / 652;
+  }
+
+
+  /* CONTROLS BECOME A HORIZONTAL ROW */
+
+  .work-version-controls {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap:
+      clamp(
+        35px,
+        14vw,
+        70px
+      );
+  }
+
+
+  .work-version-button {
+    width:
+      clamp(
+        38px,
+        11vw,
+        50px
+      );
+  }
+
+
+  /* RIGHT INFO PANEL */
+
+  .work-info-panel {
+    width:
+      min(
+        78%,
+        390px
+      );
+
+    height: auto;
+
+    aspect-ratio:
+      496 / 652;
+
+    margin-bottom:
+      10px;
+  }
+
+
+  .work-detail-back {
+    font-size:
+      clamp(
+        0.55rem,
+        2.5vw,
+        0.8rem
+      );
+  }
+
+
+  .work-detail-title h1 {
+    font-size:
+      clamp(
+        1rem,
+        5vw,
+        1.8rem
+      );
+  }
+
+
+  .work-detail-description {
+    font-size:
+      clamp(
+        0.7rem,
+        3vw,
+        0.9rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   <= 430PX
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .work-showcase-panel {
+    width:
+      98%;
+  }
+
+
+  .work-info-panel {
+    width:
+      min(
+        84%,
+        340px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .work-media-item,
+  .work-version-button,
+  .work-detail-back {
+    transition:
+      none;
+  }
+
+}
+
+/* =========================================================
+   HOMEPAGE
+   INTRO VIDEO → NAV SLIDE DOWN → DVD PNG APPEARS
+========================================================= */
+
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.home-page {
+  overflow: hidden;
+}
+
+
+.home-intro-layer {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background: #000;
+
+  z-index: 10000;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+
+.home-intro-video {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform: translate(-50%, -50%);
+
+  display: block;
+}
+
+/* =========================================================
+   VIDEO DISAPPEARS AFTER IT FINISHES
+========================================================= */
+
+.home-page.home-intro-complete
+.home-intro-layer {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR — INITIAL STATE
+
+   Navbar still uses EXACTLY the same HTML/CSS system
+   as your other pages.
+
+   This only moves the whole navbar upward during the intro.
+========================================================= */
+
+.home-page .site-header {
+  transform: translateY(-115%);
+
+  opacity: 0;
+
+  transition:
+    transform 0.9s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+
+  /*
+     Navbar stays below the intro video while video is playing.
+  */
+  z-index: 50;
+}
+
+
+/* Prevent navbar buttons being clicked during intro */
+
+.home-page:not(.home-intro-complete)
+.nav-button,
+
+.home-page:not(.home-intro-complete)
+.site-logo,
+
+.home-page:not(.home-intro-complete)
+.menu-toggle {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR — AFTER VIDEO FINISHES
+========================================================= */
+
+.home-page.home-intro-complete
+.site-header {
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+
+/* Restore navbar interaction */
+
+.home-page.home-intro-complete
+.nav-button,
+
+.home-page.home-intro-complete
+.site-logo,
+
+.home-page.home-intro-complete
+.menu-toggle {
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   HOME DVD — LARGE + BALANCED
+========================================================= */
+
+.home-dvd-image {
+  position: absolute;
+
+  /* slightly closer to the left edge */
+  left: 7.5cqw;
+
+  /* sits naturally near the bottom */
+  bottom: 0.5cqh;
+
+  width: auto;
+
+  /* MUCH BIGGER */
+  height:
+    min(
+      92cqh,
+      43cqw,
+      1000px
+    );
+
+  max-width: 92cqw;
+  max-height: 97cqh;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  transform:
+    translateY(3cqh)
+    scale(0.96);
+
+  transform-origin: left bottom;
+
+  pointer-events: none;
+  user-select: none;
+
+  transition:
+    opacity 1.25s ease 0.15s,
+    transform 1.25s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      0.15s;
+}
+
+
+/* =========================================================
+   AFTER INTRO VIDEO
+========================================================= */
+
+.home-page.home-intro-complete
+.home-dvd-image {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   SHORT / WIDE LAPTOP
+   1920×800, 1440×800, 1366×768
+========================================================= */
+
+@media (max-height: 850px) {
+
+  .home-dvd-image {
+    left: 6.5cqw;
+    bottom: 0;
+
+    height:
+      min(
+        96cqh,
+        42cqw,
+        800px
+      );
+
+    max-height: 98cqh;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .home-dvd-image {
+    left: 4cqw;
+    bottom: 1cqh;
+
+    height:
+      min(
+        90cqh,
+        61cqw,
+        720px
+      );
+
+    max-width: 95cqw;
+    max-height: 96cqh;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .home-dvd-image {
+    left: 50%;
+    bottom: 1cqh;
+
+    width:
+      min(
+        96cqw,
+        600px
+      );
+
+    height: auto;
+
+    max-width: 96cqw;
+    max-height: 91cqh;
+
+    transform:
+      translateX(-50%)
+      translateY(3cqh)
+      scale(0.96);
+
+    transform-origin: center bottom;
+  }
+
+
+  .home-page.home-intro-complete
+  .home-dvd-image {
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .home-dvd-image {
+    width: 99cqw;
+
+    max-width: 99cqw;
+    max-height: 90cqh;
+
+    bottom: 0;
+  }
+
+}
+/* =========================================================
+   NAVIGATION LOADING SCREEN
+========================================================= */
+
+.page-video-loader {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100dvh;
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+  background: #000;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+
+/* =========================================================
+   SHOW LOADER
+========================================================= */
+
+.page-video-loader.is-active {
+  opacity: 1;
+  visibility: visible;
+
+  pointer-events: all;
+}
+
+
+/* =========================================================
+   LOADING VIDEO
+========================================================= */
+
+.page-loader-video {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  background: #000;
+}
+
+/* =========================================================
+   HOMEPAGE LANDING — FINAL RESPONSIVE OVERRIDE
+
+   ADD THIS AT THE VERY END OF STYLE.CSS
+
+   Does NOT change:
+   - navbar
+   - other pages
+   - mobile menu
+   - intro video system
+========================================================= */
+
+
+/* =========================================================
+   HOME CONTENT AREA
+
+   The page grid already places this BELOW the navbar,
+   so nothing needs to overlap the navigation.
+========================================================= */
+
+.home-page .home-scene {
+  grid-column: 1;
+  grid-row: 2;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  padding:
+    clamp(12px, 2cqh, 28px)
+    clamp(20px, 2.5cqw, 52px);
+
+  container-type: size;
+}
+
+
+/* =========================================================
+   MASTER LANDING LAYOUT
+
+   LEFT  = DVD
+   RIGHT = software cluster
+
+   Everything remains INSIDE home-scene.
+========================================================= */
+
+.home-page .home-landing-layout {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 54fr)
+    minmax(0, 46fr);
+
+  align-items: center;
+
+  column-gap:
+    clamp(
+      12px,
+      2cqw,
+      42px
+    );
+}
+
+
+/* =========================================================
+   LEFT DVD BUTTON
+========================================================= */
+
+.home-page .home-dvd-link {
+  position: relative;
+
+  justify-self: center;
+  align-self: center;
+
+  display: inline-block;
+
+  width: max-content;
+  height: max-content;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  /*
+     Shift slightly toward the left like your reference.
+  */
+  margin-left: -6cqw;
+
+  z-index: 30;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  text-decoration: none;
+
+  /*
+     Intro reveal is now handled by the LINK instead
+     of the actual image.
+  */
+  opacity: 0;
+
+  transform:
+    translateY(18px)
+    scale(0.985);
+
+  transition:
+    opacity 1.05s ease 0.1s,
+    transform 0.75s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.3s ease;
+}
+
+
+/* Show DVD after intro */
+
+.home-page.home-intro-complete
+.home-dvd-link {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   IMPORTANT FIX
+
+   Your OLD .home-dvd-image used:
+   position:absolute;
+   left:;
+   bottom:;
+   transform:;
+   etc.
+
+   Those old values were breaking the new link layout.
+
+   This resets ONLY the homepage DVD image.
+========================================================= */
+
+.home-page
+.home-dvd-link
+.home-dvd-image {
+  position: static;
+
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+
+  display: block;
+
+  /*
+     Responsive based on BOTH available width + height.
+
+     This is what keeps the DVD large without going
+     under the navbar or outside the screen.
+  */
+  width:
+    min(
+      46cqw,
+      76cqh,
+      860px
+    );
+
+  height: auto;
+
+  max-width: 100vw;
+  max-height: 92cqh;
+
+  object-fit: contain;
+  object-position: center center;
+
+  opacity: 1;
+
+  transform: none;
+
+  transform-origin: center center;
+
+  /*
+     Makes the relatively flat PNG pop out.
+  */
+  filter:
+    drop-shadow(
+      0
+      24px
+      22px
+      rgba(0, 0, 0, 0.22)
+    )
+    drop-shadow(
+      0
+      8px
+      8px
+      rgba(0, 0, 0, 0.18)
+    );
+
+  pointer-events: none;
+
+  user-select: none;
+
+  transition:
+    filter 0.3s ease;
+}
+
+
+/* =========================================================
+   DVD HOVER
+========================================================= */
+
+.home-page.home-intro-complete
+.home-dvd-link:hover {
+  transform:
+    translateY(-7px)
+    scale(1.015);
+}
+
+
+.home-page.home-intro-complete
+.home-dvd-link:hover
+.home-dvd-image {
+  filter:
+    drop-shadow(
+      0
+      31px
+      28px
+      rgba(0, 0, 0, 0.27)
+    )
+    drop-shadow(
+      0
+      11px
+      11px
+      rgba(0, 0, 0, 0.22)
+    )
+    brightness(1.025);
+}
+
+
+/* Keyboard navigation */
+
+.home-page
+.home-dvd-link:focus-visible {
+  outline:
+    3px solid
+    rgba(255, 255, 255, 0.9);
+
+  outline-offset: 8px;
+}
+
+
+/* =========================================================
+   RIGHT SOFTWARE PANEL
+========================================================= */
+
+.home-page .home-tools-panel {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: visible;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   SOFTWARE MAP
+
+   ALL software positions are relative to THIS BOX.
+
+   Because the box itself always fits inside home-scene,
+   nothing can fall below the page anymore.
+========================================================= */
+
+.home-page .home-tools-map {
+  position: relative;
+
+  width:
+    min(
+      43cqw,
+      80cqh,
+      720px
+    );
+
+  max-width: 100%;
+
+  aspect-ratio:
+    1.18 / 1;
+
+  flex: none;
+}
+
+
+/* =========================================================
+   SOFTWARE BASE
+
+   NO BLUR ANYMORE.
+========================================================= */
+
+.home-page .home-tool {
+  position: absolute;
+
+  display: block;
+
+  opacity: 1;
+
+  filter: none;
+
+  transform: none;
+
+  transition:
+    transform 0.25s
+      cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.25s ease;
+}
+
+
+.home-page .home-tool img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   POSITIONS
+
+   Matches your landingpage11 composition:
+
+              AE        BLENDER
+
+         PS
+
+                   AI
+
+       DIVE               FIGMA
+
+             DEEPER
+========================================================= */
+
+
+/* PHOTOSHOP */
+
+.home-page .home-tool-ps {
+  left: 3%;
+  top: 34%;
+
+  width: 24%;
+}
+
+
+/* AFTER EFFECTS */
+
+.home-page .home-tool-ae {
+  left: 29%;
+  top: 4%;
+
+  width: 23%;
+}
+
+
+/* BLENDER */
+
+.home-page .home-tool-blender {
+  left: 61%;
+  top: 14%;
+
+  width: 25%;
+}
+
+
+/* ILLUSTRATOR */
+
+.home-page .home-tool-ai {
+  left: 42%;
+  top: 49%;
+
+  width: 24%;
+}
+
+
+/* FIGMA */
+
+.home-page .home-tool-figma {
+  left: 72%;
+  top: 66%;
+
+  width: 24%;
+}
+
+
+/* =========================================================
+   REMOVE ALL PREVIOUS BLUR
+========================================================= */
+
+.home-page .home-tool,
+.home-page .home-tool:hover,
+.home-page .home-tool-text,
+.home-page .home-tool-text:hover {
+  opacity: 1;
+
+  backdrop-filter: none;
+
+  -webkit-backdrop-filter: none;
+}
+
+
+/* =========================================================
+   INDIVIDUAL GLOW EFFECTS
+========================================================= */
+
+
+/* PHOTOSHOP */
+
+.home-page .home-tool-ps:hover {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(49, 168, 255, 0.8)
+    )
+    drop-shadow(
+      0 0 23px
+      rgba(49, 168, 255, 0.55)
+    );
+}
+
+
+/* AFTER EFFECTS */
+
+.home-page .home-tool-ae:hover {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(153, 128, 255, 0.85)
+    )
+    drop-shadow(
+      0 0 24px
+      rgba(108, 73, 255, 0.58)
+    );
+}
+
+
+/* BLENDER */
+
+.home-page .home-tool-blender:hover {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(245, 128, 0, 0.9)
+    )
+    drop-shadow(
+      0 0 24px
+      rgba(245, 128, 0, 0.6)
+    );
+}
+
+
+/* ILLUSTRATOR */
+
+.home-page .home-tool-ai:hover {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(255, 174, 0, 0.9)
+    )
+    drop-shadow(
+      0 0 24px
+      rgba(255, 132, 0, 0.55)
+    );
+}
+
+
+/* FIGMA */
+
+.home-page .home-tool-figma:hover {
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
+  filter:
+    drop-shadow(
+      0 0 11px
+      rgba(255, 255, 255, 0.85)
+    )
+    drop-shadow(
+      0 0 25px
+      rgba(40, 190, 255, 0.48)
+    );
+}
+
+
+/* =========================================================
+   DIVE / DEEPER
+========================================================= */
+
+.home-page .home-tool-text {
+  position: absolute;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.025em;
+
+  white-space: nowrap;
+
+  opacity: 1;
+
+  filter: none;
+
+  text-shadow:
+    0
+    2px
+    5px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+
+/* DIVE */
+
+.home-page .home-tool-text-dive {
+  left: 3%;
+  top: 70%;
+
+  font-size:
+    clamp(
+      1.5rem,
+      3.3cqw,
+      3.7rem
+    );
+}
+
+
+/* DEEPER */
+
+.home-page .home-tool-text-deeper {
+  left: 31%;
+  top: 85%;
+
+  font-size:
+    clamp(
+      1.5rem,
+      3.3cqw,
+      3.7rem
+    );
+}
+
+
+/* Text glow */
+
+.home-page .home-tool-text:hover {
+  transform:
+    translateY(-3px);
+
+  text-shadow:
+    0 0 8px
+    rgba(255, 255, 255, 0.95),
+
+    0 0 18px
+    rgba(255, 255, 255, 0.7),
+
+    0 0 32px
+    rgba(84, 208, 255, 0.5);
+}
+
+
+/* =========================================================
+   MEDIUM / SHORT LAPTOP
+
+   Prevents layouts such as:
+   1366×768
+   1440×800
+   1920×800
+
+   from becoming too tall.
+========================================================= */
+
+@media
+(max-width: 1500px),
+(max-height: 850px) {
+
+  .home-page
+  .home-dvd-link
+  .home-dvd-image {
+    width:
+      min(
+        43cqw,
+        70cqh,
+        690px
+      );
+
+    max-height:
+      89cqh;
+  }
+
+
+  .home-page
+  .home-tools-map {
+    width:
+      min(
+        42cqw,
+        72cqh,
+        610px
+      );
+  }
+
+
+  .home-page
+  .home-dvd-link {
+    margin-left:
+      -4cqw;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .home-page .home-scene {
+    padding:
+      clamp(
+        8px,
+        1.5cqh,
+        16px
+      )
+      clamp(
+        10px,
+        2cqw,
+        20px
+      );
+  }
+
+
+  .home-page
+  .home-landing-layout {
+    grid-template-columns:
+      minmax(0, 52fr)
+      minmax(0, 48fr);
+
+    column-gap:
+      clamp(
+        6px,
+        1cqw,
+        14px
+      );
+  }
+
+
+  .home-page
+  .home-dvd-link {
+    margin-left:
+      -2cqw;
+  }
+
+
+  .home-page
+  .home-dvd-link
+  .home-dvd-image {
+    width:
+      min(
+        48cqw,
+        66cqh,
+        560px
+      );
+  }
+
+
+  .home-page
+  .home-tools-map {
+    width:
+      min(
+        45cqw,
+        68cqh,
+        520px
+      );
+  }
+
+
+  .home-page
+  .home-tool-text-dive,
+  .home-page
+  .home-tool-text-deeper {
+    font-size:
+      clamp(
+        1.15rem,
+        3.7cqw,
+        2.6rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+
+   Horizontal desktop layout no longer makes sense here.
+
+   We stack the composition but keep both pieces entirely
+   within the SAME available content section.
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .home-page .home-scene {
+    padding:
+      6px
+      10px;
+  }
+
+
+  .home-page
+  .home-landing-layout {
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    grid-template-rows:
+      minmax(0, 48fr)
+      minmax(0, 52fr);
+
+    row-gap:
+      2cqh;
+  }
+
+
+  .home-page
+  .home-dvd-link {
+    grid-row: 1;
+
+    justify-self: center;
+    align-self: center;
+
+    margin-left: 0;
+  }
+
+
+  .home-page
+  .home-dvd-link
+  .home-dvd-image {
+    width:
+      min(
+        67cqw,
+        35cqh,
+        430px
+      );
+
+    max-height:
+      44cqh;
+  }
+
+
+  .home-page
+  .home-tools-panel {
+    grid-row: 2;
+  }
+
+
+  .home-page
+  .home-tools-map {
+    width:
+      min(
+        91cqw,
+        53cqh,
+        480px
+      );
+  }
+
+
+  .home-page
+  .home-tool-text-dive,
+  .home-page
+  .home-tool-text-deeper {
+    font-size:
+      clamp(
+        1rem,
+        6cqw,
+        2rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .home-page
+  .home-dvd-link
+  .home-dvd-image {
+    width:
+      min(
+        72cqw,
+        32cqh,
+        330px
+      );
+  }
+
+
+  .home-page
+  .home-tools-map {
+    width:
+      min(
+        94cqw,
+        49cqh,
+        390px
+      );
+  }
+
+}
+
+/* =========================================================
+   HOMEPAGE RIGHT-SIDE ASSETS — SIZE TWEAK
+   Paste this at the VERY END of style.css
+========================================================= */
+
+/* làm cả cụm bên phải to hơn một chút */
+.home-page .home-tools-map {
+  width:
+    min(
+      47cqw,
+      82cqh,
+      780px
+    );
+}
+
+
+/* scale từng asset to hơn nhẹ */
+.home-page .home-tool-ps {
+  left: 4%;
+  top: 34%;
+  width: 26%;
+}
+
+.home-page .home-tool-ae {
+  left: 29%;
+  top: 5%;
+  width: 25%;
+}
+
+.home-page .home-tool-blender {
+  left: 58%;
+  top: 16%;
+  width: 26%;
+}
+
+.home-page .home-tool-ai {
+  left: 40%;
+  top: 50%;
+  width: 25%;
+}
+
+.home-page .home-tool-figma {
+  left: 69%;
+  top: 67%;
+  width: 27%;
+}
+
+
+/* chữ nhỏ lại để cân hơn */
+.home-page .home-tool-text-dive {
+  left: 4%;
+  top: 73%;
+
+  font-size:
+    clamp(
+      1.2rem,
+      2.5cqw,
+      2.8rem
+    );
+}
+
+.home-page .home-tool-text-deeper {
+  left: 22%;
+  top: 88%;
+
+  font-size:
+    clamp(
+      1.2rem,
+      2.5cqw,
+      2.8rem
+    );
+}
+
+
+/* tablet */
+@media (max-width: 1100px) {
+  .home-page .home-tools-map {
+    width:
+      min(
+        49cqw,
+        72cqh,
+        620px
+      );
+  }
+
+  .home-page .home-tool-text-dive,
+  .home-page .home-tool-text-deeper {
+    font-size:
+      clamp(
+        1rem,
+        3.1cqw,
+        2.2rem
+      );
+  }
+}
+
+
+/* phone */
+@media (max-width: 700px) {
+  .home-page .home-tools-map {
+    width:
+      min(
+        95cqw,
+        56cqh,
+        520px
+      );
+  }
+
+  .home-page .home-tool-text-dive,
+  .home-page .home-tool-text-deeper {
+    font-size:
+      clamp(
+        0.95rem,
+        4.5cqw,
+        1.8rem
+      );
+  }
+}
+
+.home-page
+.home-dvd-link
+.home-dvd-image {
+  width:
+    min(
+      56cqw,
+      90cqh,
+      1080px
+    );
+
+  max-width: 100%;
+  max-height: 97cqh;
+}
+
+.home-page .home-dvd-link {
+  margin-left: -9cqw;
+}
+
+/* =========================================================
+   FLOOZY
+   Main titles
+========================================================= */
+
+.about-heading h1,
+.project-copy h1 {
+  font-family:
+    "Floozy",
+    cursive;
+}
+
+/* =========================================================
+   APPLE GARAMOND
+========================================================= */
+
+
+/* NAVIGATION BUTTON TEXT */
+
+.nav-button span {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}
+
+
+/* MOBILE NAVIGATION */
+
+.mobile-menu-links a {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}
+
+
+/* WORKS CONTENT */
+
+.project-copy > p,
+.project-number,
+.project-open-text {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}
+
+
+/* LOOPING BOTTOM BAR */
+
+.marquee-content span {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}
+
+
+/* HOMEPAGE DIVE / DEEPER */
+
+.home-page .home-tool-text {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}
+
+/* =========================================================
+   ABOUT DESCRIPTION ON PINK OVAL
+========================================================= */
+
+/* =========================================================
+   ABOUT DESCRIPTION INSIDE OVAL
+========================================================= */
+
+.about-description {
+  position: absolute;
+
+  left: 25%;
+  top: 17%;
+
+  width: 45%;
+  height: 66%;
+
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    clamp(10px, 1.2vw, 18px)
+    clamp(16px, 1.8vw, 28px);
+
+  text-align: left;
+}
+
+
+.about-description p {
+  width: 100%;
+
+  color: #000;
+
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(1.15rem, 1.52vw, 1.65rem);
+
+  line-height: 1.70;
+
+  text-wrap: balance;
+}
+
+
+
+
+/* =========================================================
+   TYPEWRITER TEXT
+========================================================= */
+
+.display-frame-typed-text {
+  white-space: normal;
+}
+
+
+/* blinking cursor */
+
+.display-frame-cursor {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  animation:
+    about-type-cursor
+    0.75s
+    step-end
+    infinite;
+}
+
+
+@keyframes about-type-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SILVER FRAME HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .display-frame-wrap {
+    transition:
+      transform 0.25s ease,
+      filter 0.25s ease;
+  }
+
+
+  .display-frame-wrap:hover {
+    transform:
+      translateY(-50%)
+      translateY(-4px);
+
+    filter:
+      drop-shadow(
+        0 10px 12px
+        rgba(0, 0, 0, 0.18)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .about-description {
+    left: 42%;
+    top: 29%;
+
+    width: 43%;
+
+    font-size:
+      clamp(
+        0.78rem,
+        1.8cqw,
+        1.15rem
+      );
+  }
+
+
+  .display-frame-wrap {
+    position: relative;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    left: auto;
+    top: auto;
+
+    align-self: start;
+    justify-self: center;
+
+    height:
+      min(
+        94%,
+        56vw
+      );
+
+    width: max-content;
+
+    max-width: 50vw;
+
+    transform: none;
+
+    margin-top: 0;
+
+    z-index: 4;
+  }
+
+
+  .display-frame-wrap > .display-frame {
+    max-width: 100%;
+
+    object-fit: contain;
+  }
+
+
+  .display-frame-text-area {
+    font-size:
+      clamp(
+        0.72rem,
+        1.7vw,
+        1rem
+      );
+  }
+
+
+  .display-frame-wrap:hover {
+    transform:
+      translateY(-4px);
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-description {
+    left: 39%;
+    top: 27%;
+
+    width: 48%;
+
+    font-size:
+      clamp(
+        0.67rem,
+        2.7vw,
+        0.92rem
+      );
+
+    line-height: 1.25;
+  }
+
+
+  .display-frame-wrap {
+    height:
+      min(
+        94%,
+        90vw
+      );
+
+    max-width:
+      68vw;
+  }
+
+
+  .display-frame-text-area {
+    padding:
+      16%
+      15%
+      14%;
+
+    font-size:
+      clamp(
+        0.66rem,
+        2.4vw,
+        0.9rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .about-description {
+    left: 38%;
+    top: 27%;
+
+    width: 49%;
+
+    font-size:
+      clamp(
+        0.6rem,
+        2.6vw,
+        0.78rem
+      );
+  }
+
+
+  .display-frame-wrap {
+    max-width:
+      66vw;
+  }
+
+}
+
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.display-frame-cursor {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  animation:
+    about-frame-cursor
+    0.75s
+    step-end
+    infinite;
+}
+
+
+@keyframes about-frame-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+.about-description {
+  font-weight: 550;
+}
+
+/* =========================================================
+   ABOUT — PINK OVAL TEXT RESPONSIVE
+   Only scales text WITH the existing oval-group
+========================================================= */
+
+.oval-group .about-description {
+  /*
+    cqw now follows the width of .oval-group,
+    NOT the browser width.
+  */
+
+  font-size:
+    clamp(
+      0.82rem,
+      2.05cqw,
+      1.55rem
+    );
+
+  line-height: 1.32;
+
+  font-weight: 550;
+
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   ABOUT — FINAL SILVER FRAME TYPEWRITER
+
+   IMPORTANT:
+   - does NOT resize .display-frame
+   - does NOT move .display-frame
+   - does NOT change old responsive CSS
+   - text follows the ACTUAL frame through JavaScript
+========================================================= */
+
+
+/* Only make the ORIGINAL silver frame clickable */
+
+.display-frame {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TEXT LAYER
+
+   Its left / top / width / height are calculated
+   automatically from the real silver frame.
+========================================================= */
+
+.about-frame-text-layer {
+  position: absolute;
+
+  z-index: 8;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  pointer-events: none;
+
+  color: #039c24;
+
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+  clamp(
+    0.54rem,
+    calc(
+      var(--silver-frame-width, 200px)
+      * 0.070
+    ),
+    0.9rem
+  );
+
+  font-weight: 600;
+
+  line-height: 1.48;
+
+  text-align: left;
+}
+/* =========================================================
+   TYPED TEXT
+========================================================= */
+
+.display-frame-typed-text {
+  white-space: pre-line;
+
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+
+/* =========================================================
+   BLINKING CURSOR
+========================================================= */
+
+.display-frame-cursor {
+  display: inline;
+
+  margin-left: 2px;
+
+  color: #039c24;
+
+  font-weight: 700;
+
+  animation:
+    about-frame-cursor
+    0.75s
+    step-end
+    infinite;
+}
+
+
+@keyframes about-frame-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* Keep your pink oval paragraph slightly bolder */
+
+.about-description {
+  font-weight: 500;
+}
+/* =========================================================
+   PROJECT TITLES — APPLE GARAMOND
+========================================================= */
+
+.project-copy h1 {
+  font-family:
+    "Apple Garamond",
+    Georgia,
+    serif;
+}

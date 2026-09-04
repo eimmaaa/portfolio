@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>About Me</title>
+
+  <link rel="preconnect" href="floozy/Floozy__.ttf">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="site-header">
+
+      <nav class="navbar">
+
+
+<!-- =========================================
+         NAV FRAME GROUP
+
+         Frame + buttons are attached together
+    ========================================== -->
+     <div class="nav-frame-group">
+
+      <picture class="nav-frame">
+
+        <!-- tablet/phone frame -->
+        <source
+          media="(max-width: 1100px)"
+          srcset="image/frame_phone1.png"
+        >
+
+        <!-- desktop frame -->
+        <img
+          src="image/frame_lap1.png"
+          alt=""
+          draggable="false"
+        >
+
+      </picture>
+
+
+
+      <!-- =========================================
+           GREEN NAV ZONE
+
+           On desktop this covers the full frame.
+
+           On tablet/phone this becomes only
+           the green part of frame_phone1.png.
+
+           Logo + menu are attached to this zone.
+      ========================================== -->
+
+      <div class="nav-green-zone">
+
+
+        <!-- LOGO / HOME -->
+        <a
+          href="index.html"
+          class="site-logo"
+          aria-label="Home"
+        >
+
+          <img
+            src="image/logo.png"
+            alt="Eimma's Portfolio"
+          >
+
+        </a>
+
+
+
+        <!-- ===============================================
+             TABLET / PHONE MENU BUTTON
+        ================================================ -->
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+
+          <img
+            src="image/menu_phone.png"
+            alt=""
+            draggable="false"
+          >
+
+        </button>
+
+
+      </div>
+
+
+
+<!-- =====================================
+           NAV BUTTONS
+
+           These now belong to the frame,
+           NOT the whole navbar.
+      ====================================== -->
+      <div class="nav-buttons">
+
+        <a
+          href="about.html"
+          class="nav-button"
+        >
+          <img
+            src="image/button.png"
+            alt=""
+          >
+
+          <span>ABOUT</span>
+        </a>
+
+
+        <a
+          href="works.html"
+          class="nav-button"
+        >
+          <img
+            src="image/button.png"
+            alt=""
+          >
+
+          <span>WORKS</span>
+        </a>
+
+
+        <a
+          href="contact.html"
+          class="nav-button"
+        >
+          <img
+            src="image/button.png"
+            alt=""
+          >
+
+          <span>CONTACT</span>
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         TABLET / PHONE MENU
+    ====================================================== -->
+
+    <div class="menu-backdrop"></div>
+
+
+    <aside
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-hidden="true"
+    >
+
+      <button
+        class="menu-close"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        ×
+      </button>
+
+
+      <nav class="mobile-menu-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="works.html">
+          Works
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </aside>
+
+    <!-- =====================================================
+         MAIN ABOUT AREA
+    ====================================================== -->
+
+    <main class="about-scene">
+
+  >
+
+      <!-- ===============================================
+           SILVER FRAME
+           This is NOT attached to the pink group.
+      ================================================ -->
+
+      <img
+        src="image/des_frame.png"
+        alt=""
+        class="display-frame"
+        draggable="false"
+      >
+      <!-- TYPEWRITER TEXT OVER SILVER FRAME -->
+
+<div class="about-frame-text-layer">
+
+  <span
+    class="display-frame-typed-text"
+    data-text="Name: Ngo Tran Thuy Ngoc
+Birth: 05/05/2007
+
+Student at RMIT University, Bachelor of Design (Digital Media).
+
+Skills: Adobe Illustrator, Adobe Photoshop, After Effects, Figma, Blender.
+
+Experience mostly in Video and Photo, including Product Photoshoot, Social Media Design and Motion Graphics."
+  ></span>
+
+  <span class="display-frame-cursor">|</span>
+
+</div>
+
+
+
+      <!-- ===============================================
+           OVAL GROUP
+
+           EVERYTHING INSIDE THIS GROUP IS ATTACHED
+           TO THE PINK OVAL.
+
+           If oval-group moves or scales:
+           - photo follows
+           - title follows
+           - next button follows
+      ================================================ -->
+
+      <section class="oval-group">
+
+
+        <!-- PINK OVAL -->
+        <img
+          src="image/contentabout.png"
+          alt=""
+          class="about-oval"
+          draggable="false"
+        >
+
+
+
+        <!-- MY PICTURE -->
+        <img
+          src="image/mypics.png"
+          alt="Portrait"
+          class="my-picture"
+          draggable="false"
+        >
+
+
+
+        <!-- ABOUT ME TITLE -->
+        <div class="about-heading">
+
+          <img
+            src="image/about_title.png"
+            alt=""
+            class="about-title-frame"
+            draggable="false"
+          >
+
+          <h1>
+            about me
+          </h1>
+
+        </div>
+      <!-- ABOUT DESCRIPTION -->
+
+<p class="about-description">
+  I’m Ngo Tran Thuy Ngoc, a creative who enjoys exploring ideas through
+  design, visuals and digital experiences. I love experimenting
+  with different styles and turning playful concepts into
+  meaningful work.
+</p>
+
+
+        <!-- NEXT PAGE -->
+        <a
+          href="works.html"
+          class="next-page"
+        >
+
+          <img
+            src="image/nextpage.png"
+            alt=""
+          >
+
+          <span>
+            Next Page
+          </span>
+
+        </a>
+
+
+      </section>
+
+<!-- =====================================================
+       BOTTOM LINE
+       Below pink oval / above bottom purple frame
+====================================================== -->
+
+  <img
+    src="image/Line 1.png"
+    alt=""
+    class="scene-line scene-line-bottom"
+    draggable="false"
+  >
+
+    </main>
+
+
+
+<!-- =====================================================
+     BOTTOM FRAME + LOOPING TEXT
+====================================================== -->
+
+<footer class="site-footer">
+
+  <!-- PURPLE FRAME PNG -->
+  <img
+    src="image/bottomframe.png"
+    alt=""
+    class="bottom-frame-img"
+    draggable="false"
+  >
+
+
+  <!-- LOOPING TEXT -->
+  <div class="bottom-marquee">
+
+    <div class="marquee-track">
+
+      <!-- FIRST COPY -->
+      <div class="marquee-content">
+
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+
+      </div>
+
+
+      <!-- DUPLICATE COPY FOR SEAMLESS LOOP -->
+      <div
+        class="marquee-content"
+        aria-hidden="true"
+      >
+
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+        <span>Who am I ?</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Photo Series Two</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <div class="nav-frame-group">
+
+
+        <picture class="nav-frame">
+
+          <source
+            media="(max-width: 1100px)"
+            srcset="image/frame_phone1.png"
+          >
+
+          <img
+            src="image/frame_lap1.png"
+            alt=""
+            draggable="false"
+          >
+
+        </picture>
+
+
+
+        <!-- GREEN NAV AREA -->
+
+        <div class="nav-green-zone">
+
+          <a
+            href="index.html"
+            class="site-logo"
+            aria-label="Home"
+          >
+
+            <img
+              src="image/logo.png"
+              alt="Eimma's Portfolio"
+            >
+
+          </a>
+
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+
+            <img
+              src="image/menu_phone.png"
+              alt=""
+              draggable="false"
+            >
+
+          </button>
+
+        </div>
+
+
+
+        <!-- DESKTOP NAV -->
+
+        <div class="nav-buttons">
+
+          <a href="about.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>ABOUT</span>
+          </a>
+
+          <a href="works.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>WORKS</span>
+          </a>
+
+          <a href="contact.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>CONTACT</span>
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div class="menu-backdrop"></div>
+
+
+  <aside
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Close navigation menu"
+    >
+      ×
+    </button>
+
+
+    <nav class="mobile-menu-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="works.html">
+        Works
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       WORK DETAIL PAGE
+  ====================================================== -->
+
+  <main class="work-detail-scene">
+
+
+    <div class="work-detail-layout">
+
+
+      <!-- =================================================
+           LEFT SHOWCASE
+      ================================================== -->
+
+      <section class="work-showcase-panel">
+
+
+        <!-- FRAME ASSET -->
+
+        <img
+          src="image/work_showcase.png"
+          alt=""
+          class="work-showcase-frame"
+          draggable="false"
+        >
+
+
+
+        <!-- =================================================
+             MEDIA WINDOW
+
+             Add as many .work-media-item elements
+             as you need.
+
+             The first one is shown initially.
+        ================================================== -->
+
+        <div class="work-screen-window">
+
+
+          <!-- VERSION 01 -->
+
+          <img
+            src="image/emtho1.JPG"
+            alt="Photo Series Two"
+            class="work-media-item is-active"
+            draggable="false"
+          >
+
+
+
+          <!-- VERSION 02 -->
+
+          <img
+            src="image/emtho2.JPG"
+            alt="Photo Series Two alternate version"
+            class="work-media-item"
+            draggable="false"
+          >
+
+
+
+          
+
+          <img
+            src="image/emtho3.JPG"
+            alt="Photo Series Two alternate version"
+            class="work-media-item"
+            draggable="false"
+          >
+
+        
+
+
+          <!-- =================================================
+               VIDEO EXAMPLE
+
+               If the project uses video, you can put this
+               inside instead of an image.
+
+               Video automatically FILLS the showcase frame.
+
+          <video
+            class="work-media-item work-media-video"
+            controls
+            playsinline
+            preload="metadata"
+          >
+            <source
+              src="video/photo_project_2.mp4"
+              type="video/mp4"
+            >
+          </video>
+
+          ================================================== -->
+
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =================================================
+           VERSION CONTROLS
+      ================================================== -->
+
+      <div class="work-version-controls">
+
+
+        <button
+          class="work-version-button work-version-up"
+          type="button"
+          aria-label="Previous version"
+        >
+
+          <img
+            src="image/button_up.png"
+            alt=""
+            draggable="false"
+          >
+
+        </button>
+
+
+
+        <button
+          class="work-version-button work-version-down"
+          type="button"
+          aria-label="Next version"
+        >
+
+          <img
+            src="image/button_down.png"
+            alt=""
+            draggable="false"
+          >
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           RIGHT INFORMATION PANEL
+      ================================================== -->
+
+      <section class="work-info-panel">
+
+
+        <!-- FRAME -->
+
+        <img
+          src="image/details_description.png"
+          alt=""
+          class="work-info-frame"
+          draggable="false"
+        >
+
+
+
+        <!-- =================================================
+             SEE OTHER WORKS
+
+             The arrow is already drawn in the PNG.
+             The text is added beside it.
+        ================================================== -->
+
+        <a
+          href="photography.html"
+          class="work-detail-back"
+          aria-label="See other Photography works"
+        >
+          <span>See other works</span>
+        </a>
+
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <div class="work-detail-title">
+
+          <h1>
+            Em Tho Project 
+          </h1>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESCRIPTION
+
+             This area scrolls by itself if the text
+             becomes too long.
+        ================================================== -->
+
+        <div class="work-detail-description">
+
+          <p>
+         Em Tho Project is a non-profit project built to sell handmade products in order to raise fund for donation to orphanage.
+          </p>
+
+          <p>
+           Working with the media team, my jobs was to retouching most of the photoshoot that used to promote the products via social media. I also takes part in directing the photoshoot.
+          </p>
+
+        </div>
+
+
+      </section>
+
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <img
+      src="image/bottomframe.png"
+      alt=""
+      class="bottom-frame-img"
+      draggable="false"
+    >
+
+
+    <div class="bottom-marquee">
+
+      <div class="marquee-track">
+
+
+        <div class="marquee-content">
+
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+
+        </div>
+
+
+        <div
+          class="marquee-content"
+          aria-hidden="true"
+        >
+
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+          <span>Photography</span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

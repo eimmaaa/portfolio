@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Works</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="page">
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="site-header">
+
+      <nav class="navbar">
+
+
+        <!-- =========================================
+             NAV FRAME GROUP
+        ========================================== -->
+
+        <div class="nav-frame-group">
+
+
+          <picture class="nav-frame">
+
+            <!-- tablet / phone frame -->
+            <source
+              media="(max-width: 1100px)"
+              srcset="image/frame_phone1.png"
+            >
+
+            <!-- desktop frame -->
+            <img
+              src="image/frame_lap1.png"
+              alt=""
+              draggable="false"
+            >
+
+          </picture>
+
+
+
+          <!-- =========================================
+               GREEN NAV ZONE
+
+               Logo + mobile menu button stay attached
+               to the green area.
+          ========================================== -->
+
+          <div class="nav-green-zone">
+
+
+            <!-- LOGO / HOME -->
+
+            <a
+              href="index.html"
+              class="site-logo"
+              aria-label="Home"
+            >
+
+              <img
+                src="image/logo.png"
+                alt="Eimma's Portfolio"
+              >
+
+            </a>
+
+
+
+            <!-- ===============================================
+                 TABLET / PHONE MENU BUTTON
+            ================================================ -->
+
+            <button
+              class="menu-toggle"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+
+              <img
+                src="image/menu_phone.png"
+                alt=""
+                draggable="false"
+              >
+
+            </button>
+
+
+          </div>
+
+
+
+          <!-- =====================================
+               DESKTOP NAV BUTTONS
+          ====================================== -->
+
+          <div class="nav-buttons">
+
+            <a
+              href="about.html"
+              class="nav-button"
+            >
+
+              <img
+                src="image/button.png"
+                alt=""
+              >
+
+              <span>ABOUT</span>
+
+            </a>
+
+
+            <a
+              href="works.html"
+              class="nav-button"
+            >
+
+              <img
+                src="image/button.png"
+                alt=""
+              >
+
+              <span>WORKS</span>
+
+            </a>
+
+
+            <a
+              href="contact.html"
+              class="nav-button"
+            >
+
+              <img
+                src="image/button.png"
+                alt=""
+              >
+
+              <span>CONTACT</span>
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         TABLET / PHONE MENU
+    ====================================================== -->
+
+    <div class="menu-backdrop"></div>
+
+
+    <aside
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-hidden="true"
+    >
+
+      <button
+        class="menu-close"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        ×
+      </button>
+
+
+      <nav class="mobile-menu-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="works.html">
+          Works
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         WORKS CATEGORY PAGE
+    ====================================================== -->
+
+    <main class="works-scene">
+
+
+      <!-- ===============================================
+           CATEGORY AREA
+      ================================================ -->
+
+      <section class="works-category-grid">
+
+
+        <!-- =================================================
+             FEATURED WORKS
+        ================================================== -->
+
+        <article
+          class="
+            work-category
+            work-category-featured
+          "
+        >
+
+
+          <!-- PREVIEW -->
+
+          <div class="work-preview">
+
+            <img
+              src="image/sosaumedia.png"
+              alt="Preview of featured works"
+              draggable="false"
+            >
+
+          </div>
+
+
+
+          <!-- CATEGORY BUTTON -->
+
+          <a
+            href="featured-works.html"
+            class="work-category-button"
+            aria-label="View Featured Works"
+          >
+
+            <img
+              src="image/featured_button.png"
+              alt="Featured Works"
+              draggable="false"
+            >
+
+          </a>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             PHOTOGRAPHY
+        ================================================== -->
+
+        <article
+          class="
+            work-category
+            work-category-photo
+          "
+        >
+
+
+          <!-- PREVIEW -->
+
+          <div class="work-preview">
+
+            <img
+              src="image/cameo_FINAL_1.jpeg"
+              alt="Preview of photography work"
+              draggable="false"
+            >
+
+          </div>
+
+
+
+          <!-- CATEGORY BUTTON -->
+
+          <a
+            href="photography.html"
+            class="work-category-button"
+            aria-label="View Photography"
+          >
+
+            <img
+              src="image/photo_button.png"
+              alt="Photography"
+              draggable="false"
+            >
+
+          </a>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             PERSONAL DESIGNS
+        ================================================== -->
+
+        <article
+          class="
+            work-category
+            work-category-personal
+          "
+        >
+
+
+          <!-- PREVIEW -->
+
+          <div class="work-preview">
+
+            <img
+              src="image/personal_preview.png"
+              alt="Preview of personal designs"
+              draggable="false"
+            >
+
+          </div>
+
+
+
+          <!-- CATEGORY BUTTON -->
+
+          <a
+            href="personal-designs.html"
+            class="work-category-button"
+            aria-label="View Personal Designs"
+          >
+
+            <img
+              src="image/peronal_button.png"
+              alt="Personal Designs"
+              draggable="false"
+            >
+
+          </a>
+
+
+        </article>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BOTTOM FRAME + LOOPING TEXT
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+      <img
+        src="image/bottomframe.png"
+        alt=""
+        class="bottom-frame-img"
+        draggable="false"
+      >
+
+
+      <div class="bottom-marquee">
+
+        <div class="marquee-track">
+
+
+          <!-- FIRST COPY -->
+
+          <div class="marquee-content">
+
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+
+          </div>
+
+
+
+          <!-- DUPLICATE COPY FOR SEAMLESS LOOP -->
+
+          <div
+            class="marquee-content"
+            aria-hidden="true"
+          >
+
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+            <span>My Works</span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </footer>
+
+
+  </div>
+  <!-- END .page -->
+
+
+  <!-- =====================================================
+       SHARED JAVASCRIPT
+
+       Controls tablet / phone navigation menu.
+       Keep this on EVERY page.
+  ====================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
