@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Eimma's Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="home-page">
+
+<div class="page">
+
+
+  <!-- =====================================================
+       HOME INTRO VIDEO
+
+       - Autoplay starts as soon as the browser can play it.
+       - muted + playsinline allow autoplay on most browsers.
+       - CSS uses object-fit: contain so the whole animation stays
+         visible on wide, short, tablet and phone screens.
+       - When the real video ends, script.js reveals the navbar
+         and final PNG.
+  ====================================================== -->
+
+  <div class="home-intro-layer" aria-hidden="true">
+    <video
+      class="home-intro-video"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="image/landing_3.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  <!-- =====================================================
+       NAVIGATION
+
+       Same shared navbar used by the other pages.
+       On the homepage only, CSS keeps the whole header above
+       the viewport until the intro video finishes.
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <nav class="navbar">
+
+      <div class="nav-frame-group">
+
+
+        <picture class="nav-frame">
+
+          <source
+            media="(max-width: 1100px)"
+            srcset="image/frame_phone1.png"
+          >
+
+          <img
+            src="image/frame_lap1.png"
+            alt=""
+            draggable="false"
+          >
+
+        </picture>
+
+
+
+        <!-- GREEN NAV AREA -->
+
+        <div class="nav-green-zone">
+
+          <a
+            href="index.html"
+            class="site-logo"
+            aria-label="Home"
+          >
+
+            <img
+              src="image/logo.png"
+              alt="Eimma's Portfolio"
+            >
+
+          </a>
+
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+
+            <img
+              src="image/menu_phone.png"
+              alt=""
+              draggable="false"
+            >
+
+          </button>
+
+        </div>
+
+
+
+        <!-- DESKTOP NAV -->
+
+        <div class="nav-buttons">
+
+          <a href="about.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>ABOUT</span>
+          </a>
+
+          <a href="works.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>WORKS</span>
+          </a>
+
+          <a href="contact.html" class="nav-button">
+            <img src="image/button.png" alt="">
+            <span>CONTACT</span>
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <div class="menu-backdrop"></div>
+
+
+  <aside
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Close navigation menu"
+    >
+      ×
+    </button>
+
+
+    <nav class="mobile-menu-links">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="works.html">Works</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       FINAL HOME CONTENT
+
+       Export image/home_dvd.png from the same final pose as
+       the last frame of home_intro.mp4 for the smoothest handoff.
+  ====================================================== -->
+
+  <main class="home-scene" aria-label="Home">
+
+  <div class="home-landing-layout">
+
+    <!-- LEFT: DVD OBJECT / BUTTON -->
+    <a
+      href="about.html"
+      class="home-dvd-link"
+      aria-label="Go to About page"
+    >
+      <img
+        src="image/0235.png"
+        alt="DVD portfolio player"
+        class="home-dvd-image"
+        draggable="false"
+      >
+    </a>
+
+
+    <!-- RIGHT: SOFTWARE + TEXT -->
+    <section
+      class="home-tools-panel"
+      aria-label="Creative software"
+    >
+
+      <div class="home-tools-map">
+
+        <!-- PS -->
+        <div class="home-tool home-tool-ps">
+          <img
+            src="image/pts.png"
+            alt="Adobe Photoshop"
+            draggable="false"
+          >
+        </div>
+
+        <!-- AE -->
+        <div class="home-tool home-tool-ae">
+          <img
+            src="image/aftereffect.png"
+            alt="Adobe After Effects"
+            draggable="false"
+          >
+        </div>
+
+        <!-- BLENDER -->
+        <div class="home-tool home-tool-blender">
+          <img
+            src="image/blender.png"
+            alt="Blender"
+            draggable="false"
+          >
+        </div>
+
+        <!-- AI -->
+        <div class="home-tool home-tool-ai">
+          <img
+            src="image/illu.png"
+            alt="Adobe Illustrator"
+            draggable="false"
+          >
+        </div>
+
+        <!-- FIGMA -->
+        <div class="home-tool home-tool-figma">
+          <img
+            src="image/figma.png"
+            alt="Figma"
+            draggable="false"
+          >
+        </div>
+
+        <!-- TEXT -->
+        <p class="home-tool-text home-tool-text-dive">
+          DIVE
+        </p>
+
+        <p class="home-tool-text home-tool-text-deeper">
+          DEEPER
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+</div>
+
+
+<script src="loading-screen.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
